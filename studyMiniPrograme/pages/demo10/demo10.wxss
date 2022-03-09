@@ -1,0 +1,8 @@
+/* pages/demo10/demo10.wxss */
+swiper{
+    width: 100%;
+    height: calc(750rpx * 280 / 520);
+}
+image{
+    width: 100%;
+}
