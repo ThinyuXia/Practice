@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE teaching-plan SYSTEM "plan.dtd">
+<teaching-plan>
+    <course>
+        <course-name>美术课</course-name>
+        <class-hour>1.5小时</class-hour>
+        <exam-form>笔试</exam-form>
+    </course>
+</teaching-plan>
