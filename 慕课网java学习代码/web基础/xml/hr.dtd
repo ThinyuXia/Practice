@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT hr (employee*)>
+<!ELEMENT dname (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT salary (#PCDATA) >
+<!ELEMENT age (#PCDATA) >
+<!ELEMENT name  (#PCDATA) >
+<!ELEMENT department (dname,address) >
+<!ELEMENT employee (name,age,salary,department)>
+
+<!ATTLIST employee number CDATA "">
