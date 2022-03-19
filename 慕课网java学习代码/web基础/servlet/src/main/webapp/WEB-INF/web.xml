@@ -14,11 +14,26 @@
   	<!-- servlet的别名 -->
   	<servlet-name>first</servlet-name>
   	<servlet-class>com.xiaxinyu.servlet.FirstServlet</servlet-class>
-  	
+  </servlet>
+  <servlet>
+  	<servlet-name>sample</servlet-name>
+  	<servlet-class>com.xiaxinyu.servlet.SampleServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>requestMethod</servlet-name>
+  	<servlet-class>com.xiaxinyu.servlet.RequestMethodServlet</servlet-class>
   </servlet>
  <!--  将servlet与url绑定 -->
   <servlet-mapping>
   		<servlet-name>first</servlet-name>
   		<url-pattern>/hi</url-pattern>
   	</servlet-mapping>
+  <servlet-mapping>
+  		<servlet-name>sample</servlet-name>
+  		<url-pattern>/sample</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  		<servlet-name>requestMethod</servlet-name>
+  		<url-pattern>/request_ method</url-pattern>
+  </servlet-mapping>
 </web-app>
