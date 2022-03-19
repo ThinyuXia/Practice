@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hr SYSTEM "hr.dtd">
-<!-- 人力资源管理系统-->
+<!DOCTYPE hr SYSTEM "hr.dtd"><!-- 人力资源管理系统-->
 <hr>
     <employee number="3644">
         <name>张三</name>
@@ -18,6 +17,15 @@
         <department>
             <dname>工程部</dname>
             <address>XXXXX-113</address>
+        </department>
+    </employee>
+    <employee number="3446">
+        <name>王五</name>
+        <age>21</age>
+        <salary>22000</salary>
+        <department>
+            <dname>研发部</dname>
+            <address>北京</address>
         </department>
     </employee>
 </hr>
