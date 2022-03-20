@@ -40,7 +40,7 @@ public class FirstServlet extends HttpServlet{
 	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
-		System.out.println("正在销毁Servl  et对象");
+		System.out.println("正在销毁Servlet对象");
 	}
 	
 	
