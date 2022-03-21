@@ -1,4 +1,4 @@
-package com.xiaxinyu.servlet;
+package com.xiaxinyu.servlet.direct;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class UserAgentServlet
+ * Servlet implementation class CheckLoginServlet
  */
-@WebServlet("/ua")
-public class UserAgentServlet extends HttpServlet {
+@WebServlet("/direct/check")
+public class CheckLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserAgentServlet() {
+    public CheckLoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,17 +26,12 @@ public class UserAgentServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String userAgent = request.getHeader("User-Agent");
-		response.setContentType("text/html;charset=utf-8");
-		
-		String output = "";
-		if(userAgent.indexOf("Mac") != -1) {
-			output = "<h1>" + "这是PC端首页" + "</h1>"; 
-		}else if((userAgent.indexOf("iPhone") != -1) || (userAgent.indexOf("Android") != -1)){
-			output = "<h1>" + "这是移动端首页" + "</h1>";
-		}
-		response.getWriter().println(output);
+		System.out.println("用户登录成功");
+		// 请求转发 
+		request.setAttribute("username", "admin");
+//		request.getRequestDispatcher("/direct/index").forward(request,response);
+		// 响应重定向需要增加contextPath
+		response.sendRedirect("/servlet/direct/index");  
 	}
 
-	
 }
