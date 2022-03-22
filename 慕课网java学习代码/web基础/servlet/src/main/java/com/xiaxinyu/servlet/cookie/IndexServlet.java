@@ -29,6 +29,8 @@ public class IndexServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Cookie[] cs = request.getCookies();
 		String user = null;
+		if(cs == null) {
+			response.getWriter().println("user not login");
 		for(Cookie c : cs) {
 			System.out.println(c.getName() + " : " + c.getValue());
 			if(c.getName().equals("user"))
@@ -41,8 +43,7 @@ public class IndexServlet extends HttpServlet {
 			response.getWriter().println("user not login");
 		}else {
 			response.getWriter().println(user + " login");
-		}
+		}	
 	}
-
-
+	}	
 }

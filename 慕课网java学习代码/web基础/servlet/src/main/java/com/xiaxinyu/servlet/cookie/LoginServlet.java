@@ -29,6 +29,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("用户登录成功");
 		Cookie cookie = new Cookie("user","admin");
+		cookie.setMaxAge(60*60*24*7); //单位是秒
 		response.addCookie(cookie); 
 		response.getWriter().println("success");
 	}
