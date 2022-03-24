@@ -35,7 +35,7 @@ public class StudentServlet extends HttpServlet {
 		session.setAttribute("grade", grade);
 //		request.setAttribute("student", stu); 
 //		request.setAttribute("grade", grade);
-		request.getRequestDispatcher("/el_info.jsp").forward(request,response); 
+		request.getRequestDispatcher("./el_info.jsp").forward(request,response); 
 	}
 
 }
