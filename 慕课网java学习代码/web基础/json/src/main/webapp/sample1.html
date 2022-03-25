@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var json = [
+		{
+			"empnum": 3644,
+			"ename": "xiaxinyu",
+			"job": "软件工程师",
+			"hiredate": "2017-5-25",
+			"salary": 13000,
+			"dname": "研发部"
+		},
+		{
+			"empnum": 3645,
+			"ename": "xiaxinyu1",
+			"job": "销售经理",
+			"hiredate": "2017-6-25",
+			"salary": 23000,
+			"dname": "市场部",
+			"customers": [
+				{
+					"cname": "李东"
+				},
+				{
+					"cname": "刘南"
+				}
+			]
+		}
+	];
+	//在浏览器控制台中对json内容进行输出
+	console.log(json);
+	for(var i = 0;i < json.length;i ++){
+		var emp = json[i];
+		document.write("<h1>")
+		document.write(emp.empnum + " ");
+		document.write(emp.ename + " ");
+		document.write(emp.job);
+		document.write("</h1>")
+		if(emp.customers != null){
+			for(var j = 0;j < emp.customers.length;j ++){
+				var customer = emp.customers[j];
+				document.write("<h2>")
+				document.write(customer.cname + " ");
+				document.write("</h2>")	
+			}
+		}
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

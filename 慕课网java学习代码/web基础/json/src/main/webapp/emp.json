@@ -1,0 +1,26 @@
+[
+	{
+		"empnum": 3644,
+		"ename": "xiaxinyu",
+		"job": "软件工程师",
+		"hiredate": "2017-5-25",
+		"salary": 13000,
+		"dname": "研发部"
+	},
+	{
+		"empnum": 3645,
+		"ename": "xiaxinyu1",
+		"job": "销售经理",
+		"hiredate": "2017-6-25",
+		"salary": 23000,
+		"dname": "市场部",
+		"customers": [
+			{
+				"cname": "李东"
+			},
+			{
+				"cname": "刘南"
+			}
+		]
+	}
+]
