@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input id="btnload" type="button" value="加载"></input>
+	<div id="div-content"></div>
+	
+	<script>
+		document.getElementById("btnload").onclick=function(){
+			//1.创建XmlHttpRequest对象
+			//2.发送Ajax请求
+			//3.处理服务器请求
+			var xmlHttp;
+			if(window.XMLHttpRequest){
+				xmlHttp = new XMLHttpRequest();
+			}else{
+				xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			console.log(xmlHttp);
+			//1.创建请求
+			xmlHttp.open("GET","http://localhost:8080/ajax/content",true); //true代表异步加载
+			//2.向服务器发送请求
+			xmlHttp.send();
+			//3.处理服务器响应
+			//如果使用同步机制，监听事件会失效
+			 xmlHttp.onreadystatechange = function(){
+				//仅当响应以被接收，且服务器成功处理请求时才执行
+				if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
+					var t = xmlHttp.responseText;
+					alert(t);
+					document.getElementById("div-content").innerHTML = t;
+				}
+			}
+		}
+	</script>
+</body>
+</html>
