@@ -34,10 +34,14 @@ public class PaintingDao {
 		List<Painting > list = XmlDataSource.getRawData();
 		List<Painting> categoryList = new ArrayList<>();
 		for(Painting p : list) {
-			if(p.getCatagory() == category) 
+			if(p.getCategory() == category) 
 				categoryList.add(p);
 		}
 		return new PageModel(categoryList,page,rows);
+	}
+	
+	public static void create(Painting p) {
+		XmlDataSource.append(p);
 	}
  
 }
