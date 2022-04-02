@@ -30,4 +30,12 @@ public class PaintingService {
 //		 System.out.println(pageModel.getPageData());
 		 
 	}
+	
+	/**
+	 * 新增油画
+	 * @param p 新增的油画对象
+	 */
+	public void create(Painting p) {
+		paintingDao.create(p);
+	}
 }
