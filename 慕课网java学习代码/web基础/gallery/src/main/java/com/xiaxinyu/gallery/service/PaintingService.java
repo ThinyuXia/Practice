@@ -38,4 +38,34 @@ public class PaintingService {
 	public void create(Painting p) {
 		paintingDao.create(p);
 	}
+	
+	/**
+	 * 按编号查询油画
+	 * @param id 油画id
+	 * @return 油画对象
+	 */
+	public Painting findById(Integer id) {
+		Painting p = paintingDao.findById(id);
+		if(p == null)
+			throw new RuntimeException("[id = " + id + "]" + "油画不存在");
+		return p;
+	}
+	
+	public void update(Painting newPainting,boolean isPreviewModified) {
+
+
+		Painting oldPainting = findById(newPainting.getId());
+		if(isPreviewModified) {
+			oldPainting.setPreview(newPainting.getPreview());
+		}
+		oldPainting.setCategory(newPainting.getCategory());
+		oldPainting.setDescription(newPainting.getDescription());
+		oldPainting.setPname(newPainting.getPname());
+		oldPainting.setPrice(newPainting.getPrice());
+		paintingDao.update(oldPainting);
+	}
+	
+	public void delete(Integer id) {
+		paintingDao.delete(id);
+	}
 }
