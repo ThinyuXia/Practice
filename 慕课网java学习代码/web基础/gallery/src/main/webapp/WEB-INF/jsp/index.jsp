@@ -11,7 +11,7 @@
 </head>
 <body>
 	<c:if test="${param.c != null}">
-		<c:set var="categoryParam" value="&c=${param.c }"></c:set>
+		<c:set var="categoryParam" value="&c=${param.c}"></c:set>
 	</c:if>
 	<c:if test="${param.c == null}">
 		<c:set var="categoryParam" value=""></c:set>
