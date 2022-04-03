@@ -51,6 +51,12 @@ public class ManagementController extends HttpServlet {
 			this.showCreatePage (request,response);
 		}else if(method.equals("create")) { //新增油画
 			this.create(request, response);
+		}else if(method.equals("show_update")) { //新增油画
+			this.showUpdate(request, response);
+		}else if(method.equals("update")) {
+			this.update(request,response);
+		}else if(method.equals("delete")) {
+			this.delete(request, response);
 		}
 		
 	}
@@ -132,9 +138,89 @@ public class ManagementController extends HttpServlet {
 			paintingService.create(p); //新增功能
 			//如果新增后存在后续操作则使用请求转发，否则使用请求重定向
 			response.sendRedirect("/management?method=list"); 
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+    }
+    
+    
+    //显示更新页面
+    private void showUpdate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	String id = request.getParameter("id");
+    	Painting p = paintingService.findById(Integer.parseInt(id));
+    	request.setAttribute("painting", p);
+//    	System.out.println(id); 
+    	request.getRequestDispatcher("/WEB-INF/jsp/update.jsp").forward(request, response);
+    }
+    
+    private void update(HttpServletRequest request, HttpServletResponse response) {
+    	FileItemFactory factory = new DiskFileItemFactory();
+    	ServletFileUpload sf = new ServletFileUpload(factory);
+    	try {
+			List<FileItem> formData = sf.parseRequest(request);
+			boolean isPreviewModified = false;
+			Painting p = new Painting();
+			for(FileItem fi : formData) {
+				if(fi.isFormField()) { //判断当前的对象是普通表单输入项还是文件上传框
+//					System.out.println(fi.getString("utf-8"));
+//					System.out.println(fi.getFieldName());
+					switch(fi.getFieldName()){
+						case "pname":
+							p.setPname(fi.getString("utf-8"));
+							break;
+						case "category":
+							p.setCategory(Integer.parseInt(fi.getString("utf-8")));
+							break;
+						case "price":
+							p.setPrice(Integer.parseInt(fi.getString("utf-8")));
+							break;
+						case "description":
+							p.setDescription(fi.getString("utf-8" ));
+							break; 
+						case "isPreviewModified":
+							if(Integer.parseInt(fi.getString()) == 1)
+							isPreviewModified = true;
+							break;
+						case "id":
+							p.setId(Integer.parseInt(fi.getString()));
+							break;
+						default:
+							break;
+					}	
+			}else if(isPreviewModified){
+				String path = request.getServletContext().getRealPath("/upload");
+				String fileName = UUID.randomUUID().toString();
+				String suffix = fi.getName().substring(fi.getName().lastIndexOf("."));
+				fi.write(new File(path,fileName + suffix));
+				p.setPreview("/upload/" + fileName + suffix);
+				}
+			}
+			paintingService.update(p,isPreviewModified);
+			response.sendRedirect("/management?method=list");
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    }
+    
+    /**
+	 * 客户端采用Ajax方式提交请求
+	 * Controller方法处理完后不再跳转任何jsp页面，而是通过响应输出JSON格式字符串
+	 * Tips：作为Ajax请求与服务器交互后，得到的不是整页html，而是服务器处理后的数据
+	 */
+    public void delete(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    	Integer id = Integer.parseInt(request.getParameter("id"));
+    	try {
+    		paintingService.delete(id);
+    		response.getWriter().println("{\"result\":\"ok\"}");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			response.getWriter().println("{\"result\":\"" + e.getMessage() + "\"}");
 		}
     }
 }
