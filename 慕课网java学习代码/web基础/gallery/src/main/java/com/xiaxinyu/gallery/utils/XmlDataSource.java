@@ -42,7 +42,7 @@ public class XmlDataSource {
 		 try {
 			 
 			dataFile = decoder.decode(dataFile,"utf-8"); //防止路径中的空格被转换成base64格式
-			System.out.println(dataFile); 
+//			System.out.println(dataFile); 
 			//利用Dom4j对xml文件进行解析
 			SAXReader reader = new SAXReader();
 			//1.获取Document文档对象
@@ -121,4 +121,68 @@ public class XmlDataSource {
 		XmlDataSource.append(p);
 		System.out.println(dataFile);
 	} 
+	
+	public static void update(Painting p) {
+		SAXReader reader = new SAXReader();
+		Writer writer = null;
+		try {
+			Document document = reader.read(dataFile);
+			//根据属性值筛选 格式：结点路径[@属性名=属性值]
+			List<Node> nodes = document.selectNodes("/root/painting[@id=" + p.getId() + "]");
+			if(nodes.size() == 0)
+				throw new RuntimeException("[id = " + p.getId() + "]" + "编号不存在");
+			Element e = (Element) nodes.get(0);
+			e.selectSingleNode("pname").setText(p.getPname());
+			e.selectSingleNode("category").setText(p.getCategory().toString());
+			e.selectSingleNode("price").setText(p.getPrice().toString());
+			e.selectSingleNode("preview").setText(p.getPreview());
+			e.selectSingleNode("description ").setText(p.getDescription());
+			writer = new OutputStreamWriter(new FileOutputStream(dataFile),"utf-8");
+			document.write(writer);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			if(writer != null)
+				try {
+					writer.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			XmlDataSource.reload();
+		}
+	}
+	
+	
+	public static void delete(Integer id) {
+		SAXReader reader = new SAXReader();
+		Writer writer = null;
+		try {
+			Document document = reader.read(dataFile);
+			List<Node> nodes = document.selectNodes("/root/painting[@id=" + id + "]");
+			if(nodes.size() == 0)
+				throw new RuntimeException("[id = " + id + "]" + "编号不存在");
+			
+			Element p = (Element) nodes.get(0);
+			Element parent = p.getParent();
+			parent.remove(p);
+			writer = new OutputStreamWriter(new FileOutputStream(dataFile),"utf-8");
+			document.write(writer);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			if(writer != null) {
+				try {
+					writer.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			XmlDataSource.reload(); 
+		}
+		
+	}
 }
