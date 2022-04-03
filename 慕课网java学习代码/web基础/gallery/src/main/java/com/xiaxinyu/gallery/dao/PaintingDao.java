@@ -40,8 +40,26 @@ public class PaintingDao {
 		return new PageModel(categoryList,page,rows);
 	}
 	
-	public static void create(Painting p) {
+	public void create(Painting p) {
 		XmlDataSource.append(p);
+	}
+	
+	public Painting findById(Integer id) {
+		List<Painting> data = XmlDataSource.getRawData();
+		for(Painting p : data) {
+			if(p.getId() == id) {
+				return p;
+			}
+		}
+		return null;
+	}
+	
+	public void update(Painting p) {
+		XmlDataSource.update(p);
+	}
+	
+	public void delete(Integer id) {
+		XmlDataSource.delete(id);
 	}
  
 }
