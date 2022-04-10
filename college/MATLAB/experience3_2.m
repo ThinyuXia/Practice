@@ -1,0 +1,1 @@
+y = dsolve('D2y - sin(x) * Dy + y = cos(x)','y(0) = 0,Dy(0) = 0')
