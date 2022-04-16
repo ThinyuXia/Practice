@@ -270,3 +270,165 @@ SELECT 字段1,字段2 FROM 表1 别名1 [INNER] RIGHT JOIN 表2 别名2 ON 别�
 
 
 
+##### 使用SELECT子查询
+
+* 不要在WHERE子句中使用子查询，因为每判断一条记录，都会查询一次
+* 不要在SELECT子句中使用子查询，因为每输出一条记录，都会查询一次
+* 子查询可写在WHERE，FROM，SELECT子句中，建议写在FROM子句中，因为FROM子句只会执行一次，查询效率较高
+
+```sql
+#WHERE 子句中的多行子查询
+SELECT 字段名 FROM 表名 WHERE 字段 比较运算符 [IN / ALL / ANY]; 
+
+SELECT 字段名 FROM 表名 WHERE [NOT] EXISTS(子查询); #使用EXISTS之后，WHERE子句中只含EXISTS条件
+```
+
+
+
+##### 使用INSERT添加数据
+
+```sql
+# 一条记录
+INSERT INTO 表名 (字段1,字段2...) VALUES(值1,值2...);
+
+# 多条记录
+INSERT INTO 表名 (字段1,字段2...) VALUES(值1,值2...),(值1,值2...);
+
+# MYSQL中INSERT方言
+INSERT [INTO] 表名 SET 字段名=值,字段名=值...;
+
+# 使用IGNORE处理插入冲突,忽略主键冲突,唯一值冲突的记录
+ INSERT IGNORE 表名 SET 字段名=值,字段名=值...;
+```
+
+
+
+##### 使用UPDATE更新数据
+
+```sql
+# IGNORE忽略更新后会产生冲突的记录
+UPDATE [IGNORE] 表名 SET 字段名=值,字段名=值... [WHERE 条件] [ORDER BY 字段名] [LIMIT 修改记录条数];
+
+# UPDATE语句表连接可以修改多张表的记录
+UPDATE 表1 [LEFT | RIGHT]JOIN 表2 ON 条件 SET 字段1=值,字段2=值... [WHERE ...];
+UPDATE 表1,表2 SET 字段1=值,字段2=值... WHERE 条件;
+
+```
+
+
+
+##### 使用DELETE删除数据
+
+```sql
+# IGNORE忽略删除有外键约束的记录
+DELETE [IGNORE] FROM 表名 [WHERE 条件] [ORDER BY 字段名] [LIMIT 修改记录条数];
+
+DELETE [IGNORE] 表名(想删除记录的表) FROM 表名 [LEFT | RIGHT]JOIN 表名 ON 条件 [WHERE 条件] [ORDER BY 字段名] [LIMIT 修改记录条数];
+```
+
+使用TRUNCATE在事务机制 之外清空数据表
+
+```sql
+TRUNCATE TABLE 表名;
+```
+
+
+
+MYSQL中的基本函数 
+
+```sql
+#数字函数
+ABS() #绝对值
+ROUND() #四舍五入
+FLOOR() #下取整
+CEIL() #上取整
+POWER(x,y) #幂函数
+LOG() #对数
+LN() #自然对数
+SQRT() #开平方
+PI() 
+SIN()
+COS()
+TAN()
+COT()
+
+#字符函数
+LOWER() #字符串转小写
+UPPER() #字符串转大写
+LENGTH() #字符串长度
+CONCAT(s1,s2) #拼接字符串，可接受多个参数
+INSTR(s1,s2) #s2字符串在s1字符串出现位置,不存在时返回0,没有差一原则
+INSERT(s1,index,0,s2) #插入字符串
+INSERT(s1,index,n,s2) #在index的位置替换n个字符
+REPLACE(s,s1,s2) #替换字符串
+SUBSTR(s,起始位置,结束位置) #截取字符串 
+SUBSTRING(s,起始位置,偏移量) #截取字符串
+LPAD(s,填充后字符串长度,字符) #向字符串左侧填充字符
+RPAD(s,填充后字符串长度,字符) #向字符串右侧填充字符
+TRIM(s) #去除字符串首尾空格
+
+
+#日期函数
+NOW() #获取当前日期和时间 yyyy-MM-dd hh:mm:ss
+CURDATE() #获取当前日期 yyyy-MM-dd
+CURTIME() #获取当前时间 hh:mm:ss
+DATE_FORMAT(日期,表达式) #格式化日期 %Y 年 %M 月(名称) %m(数字 ) %d 日 %w 星期(数字) %W 星期(名称) %U 第几周 %H 24小时 %h 12小时 % i分钟 %s 秒 %j 第几天
+#日期不能直接相加减，日期也不能与数字相加减
+DATE_ADD(日期,INTERVAL 偏移量 时间单位) #日期偏移计算
+DATE_DIFF(日期1,日期2) #计算两个日期相差天数
+
+#条件函数
+IFNULL(val1,val2) #若val为NULL,则用val2替换val1
+IF(条件,val1,val2) #三目运算符
+CASE
+ WHEN 条件1 THEN 值1
+ WHEN 条件2 THEN 值2
+ ELSE 值N
+END
+```
+
+
+
+
+
+##### 数据库事务机制(MYSQL5.0以后支持)
+
+事务的ACID属性
+
+* 原子性：一个事务中的操作要么全部成功，要么全部失败，事务执行后不允许停留在某个中间状态
+* 一致性：不管在任何给定的时间，并发事务有多少，事务必须保证运行结果的一致性
+* 隔离性：事务不受其他并发事务的影响，在给定的时间内，该事务是数据库唯一运行的事务
+* 持久性：事务一旦提交，结果就是永久性的，即便发生宕机，仍然可靠事务日志完成数据的持久化
+
+```sql
+START TRANSACTION;
+SQL语句
+[COMMIT | ROLLBACK]
+
+#修改当前会话的事务隔离级别
+SET SESSION TRANSACTION ISOLATION LEVEL READ 事务隔离级别;
+# READ UNCOMMITTED 读取未提交数据
+# READ COMMITTED 读取已提交数据
+# REPEATABLE READ 重复读数据 默认
+# SERIALIZABLE  序列化
+```
+
+
+
+##### 数据导入和导出
+
+* 数据导出的纯粹是业务数据
+* 数据备份，备份的是数据文件，日志文件，索引文件等等
+
+```bash
+# 把业务数据导出成sql文件
+mysqldump -uroot -p [no-data](写上no-data代表只导出表结构，否则导出表结构和数据) 逻辑库名称 > 导出路径
+
+# 必须在mysql命令行导入sql文件
+USE 逻辑库名;
+SOURCE sql文件路径;
+
+# 数据量大时把数据导出成文本文档，导出时要备份相应表结构
+# 1.文本文档相对sql文件体积小，只包含数据，不包含sql语句
+# 2.文本文档在导入时MYSQL不进行词法分析和语法优化，直接写入数据，写入速度非常快
+```
