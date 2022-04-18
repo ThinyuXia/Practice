@@ -1,7 +1,7 @@
 ##### 连接mysql
 
 ```bash
-mysql -u 用户名 -h 主机名 -p 端口名
+mysql -u 用户名 -h 主机名 -p
 ```
 
 ##### 查看mysql服务状态，以及启动和停止mysql服务
