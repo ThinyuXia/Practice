@@ -1,0 +1,98 @@
+.logo {
+    width: 80px;
+    height: 60px;
+    background-color: lightgreen;
+    float: left;
+    margin-left: 30px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.relation {
+    width: 80px;
+    height: 20px;
+    background-color: lightgreen;
+    float: right;
+    margin-right: 30px;
+    margin-top: 70px;
+    text-align: center;
+}
+
+.navigation {
+    height: 40px;
+    background-color: lightgreen;
+    text-align: center;
+    clear: both;
+    position: relative;
+    top: 10px;
+    border: solid;
+}
+
+.banner {
+    height: 200px;
+    background-color: lightblue;
+    text-align: center;
+    clear: both;
+    position: relative;
+    top: 10px;
+    border: solid;
+}
+
+.content {
+    height: 730px;
+    padding: 10px;
+    background-color: aqua;
+    clear: both;
+    position: relative;
+    border-radius: 10px;
+}
+
+.content-div {
+    width: 560px;
+    height: 300px;
+    margin-left: 9px;
+    margin-top: 10px;
+    float: left;
+    text-align: center;
+    background-color: blueviolet;
+    border-radius: 10px;
+}
+
+.content-div-new {
+    width: 1125px;
+    height: 300px;
+    margin-left: 9px;
+    margin-top: 10px;
+    float: left;
+    text-align: center;
+    background-color: lightcoral;
+    border-radius: 10px;
+}
+
+.copyright {
+    position: absolute;
+    float: left;
+    text-align: center;
+    background-color: blueviolet;
+    border-radius: 10px;
+    clear: both;
+    width: 100px;
+    height: 20px;
+    top: 700px;
+    left: 50px;
+    margin-bottom: 50px;
+}
+
+.map {
+    position: absolute;
+    float: left;
+    text-align: center;
+    background-color: lightpink;
+    border-radius: 10px;
+    clear: both;
+    width: 100px;
+    height: 20px;
+    top: 700px;
+    right: 50px;
+    margin-bottom: 50px;
+}
