@@ -1,99 +1,166 @@
 /*标签选择器*/
-p{
+/* p {
     width: 50px;
     height: 50px;
     background-color: lightgreen;
-}
-.blue-p{
+} */
+/* 
+.blue-p {
     background-color: aqua;
 }
-.big{
+
+.big {
     width: 70px;
     height: 70px;
 }
 
-/*id选择器*/
-#mydiv{
+id选择器*/
+/* #mydiv {
     background-color: aliceblue;
-}
+} */
 
-#myp{
+/* #myp {
+    width: 50px;
+    height: 50px;
     background-color: antiquewhite;
-}
+} */
 
-/*类选择器*/ 
-.red-tag{
+/*类选择器*/
+/* .red-tag {
     background-color: red;
-}
+} */
 
-.big-tag{
+/* .big-tag {
     width: 150px;
     height: 120px;
-}
+} */
 
 /*伪类选择器*/
-.effect:hover{
+/* .effect:hover {
     transform: scale(1.2);
     transition: 200ms;
-}
+} */
 
-#mydic:hover{
+/* #mydic:hover {
     background-color: lightcoral;
     transition: 200ms;
-}
+} */
 
-a:link{ /*鼠标点击之前*/
+a:link {
+    /*鼠标点击之前*/
     color: red;
 }
 
-a:visited{ /*鼠标点击之后*/
+a:visited {
+    /*鼠标点击之后*/
     color: green;
 }
 
-a:hover{ /*鼠标悬浮*/
+a:hover {
+    /*鼠标悬浮*/
     color: yellow;
 }
 
-a:active{ /*鼠标点击*/
+a:active {
+    /*鼠标点击*/
     color: purple;
 }
 
-input:focus{
+input:focus {
     background-color: lightblue;
 }
 
+*/
+
 /*位置选择器*/
-p:nth-child(2){ /*找父节点的第二个儿子
+p:nth-child(2) {
+    /*找父节点的第二个儿子
                 偶数 even 奇数odd(2n + 1)
                 3n(3的整数倍变蓝)
                 可写成an + b格式，若存在整数n使an + b=当前编号(父节点的第几个儿子)则进行渲染
-                */ 
+                */
     background-color: aquamarine;
 }
 
-p:target{
-    transform: scale(1,2);
+p:target {
+    transform: scale(1.2);
     color: orange;
     transition: 3000ms;
 }
 
+
+
 /*复合选择器*/
-div,
-p:hover{
+div:hover,
+p:hover {
     background-color: aqua;
 }
 
 
 /* 同时满足多个条件 */
-div.big.real{
+div.big.real {
     transform: scale(1.2);
 }
 
+/*紧跟在div后面的p标签*/
+div+p {
+    background-color: red;
+}
+
+/*紧跟在#myp选择器后面的p标签*/
+#myp+p {
+    background-color: purple;
+}
+
+p+#myp {
+    background-color: green;
+}
+
+/*li的某个祖先结点是ul,某个标签被添加了某种样式,它的子结点也会继承这种样式*/
+ul li {
+    color: red;
+}
+
+/*li父结点是ul*/
+ul li {
+    color: green;
+}
+
 /* 选择具有某种属性的标签 */
-input[required]{
+
+/*选择所有标签*/
+/* *{
+
+} */
+
+/*选择具有某种属性的标签*/
+input[required] {
     width: 200px;
 }
 
-input[type=number]{
+/*选择属性为指定值的标签*/
+input[type=number] {
     height: 100px;
+}
+
+
+/*伪元素选择器*/
+p::first-letter {
+    color: red;
+}
+
+p::selection {
+    color: yellow;
+    background-color: aqua;
+}
+
+
+h1::before {
+    content: "《";
+    color: red;
+}
+
+h1::after {
+    content: "》";
+    color: red;
 }
