@@ -188,7 +188,7 @@ SELECT * FROM 表名 LIMIT 条数;
 ```
 
 ```sql
-SELECT * FROM 表名 LIMIT 检索起始位置(差一原则) 条数;
+SELECT * FROM 表名 LIMIT 检索起始位置(差一原则),条数;
 ```
 
 ##### 使用SELECT检索时对数据排序
