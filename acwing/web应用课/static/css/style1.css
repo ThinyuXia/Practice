@@ -1,0 +1,23 @@
+h4 {
+    text-align: center;
+}
+
+.mydiv {
+    /* text-align: justify;
+    
+    font-size: 200%; */
+    /*justify左右均对齐*/
+    /* width: 50vw;
+    height: 30vh;*/
+    /* background-color: lightgreen;
+    text-align: center;
+    line-height: 200px; 
+    height: 200px; */
+    /*行高用来让行居中*/
+
+    text-align: center;
+    letter-spacing: 1em;
+
+    text-decoration: none; /*去掉连接的下划线*/
+
+}
