@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="goods">
+    <select id="selectAll" resultType="com.xiaxinyu.mybatis.entity.Goods">
+        SELECT * FROM t_goods ORDER BY goods_id DESC LIMIT 10
+    </select>
+
+    <!--单参数传递时，使用parameterType接收指定类型的参数即可，sql中使用#{value}提取参数-->
+    <select id="selectById" parameterType="Integer" resultType="com.xiaxinyu.mybatis.entity.Goods">
+        SELECT * FROM t_goods WHERE goods_id = #{value}
+    </select>
+
+
+    <!--多参数传递时，使用parameterType接收指定Map接口，sql中使用#{key}提取参数-->
+    <select id="selectByPriceRange" parameterType="java.util.Map" resultType="com.xiaxinyu.mybatis.entity.Goods">
+        SELECT * FROM t_goods WHERE current_price BETWEEN #{min} AND #{max} LIMIT 0,#{limit}
+    </select>
+
+    <!-- 利用LinkedList保存多表关联的查询结果
+         Mabatis将每条记录包装为LinkedHashMap对象
+         key，value分别是字段名和对应的值
+         优点：易于扩展和使用
+         缺点：太过灵活，无法进行编译时检查
+    -->
+    <select id="selectGoodsMap" resultType="java.util.LinkedHashMap">
+        SELECT g.*,c.category_name FROM t_goods g,t_category c WHERE g.category_id = c.category_id
+    </select>
+
+    <resultMap id="rmGoods" type="com.xiaxinyu.mybatis.dto.GoodsDTO">
+        <!--设置主键字段与属性映射-->
+        <id column="goods_id" property="goods.goodsId"></id>
+        <!--设置非主键字段与属性映射-->
+        <result column="title" property="goods.title"></result>
+        <result column="original_cost" property="goods.originalCost"></result>
+        <result column="current_price" property="goods.currentPrice"></result>
+        <result column="discount" property="goods.discount"></result>
+        <result column="is_free_delivery" property="goods.isFreeDelivery"></result>
+        <result column="category_id" property="goods.categoryId"></result>
+        <result column="category_id" property="category.categoryId"></result>
+        <result column="category_name" property="category.categoryName"></result>
+        <result column="parent_id" property="category.parentId"></result>
+        <result column="category_level" property="category.categoryLevel"></result>
+        <result column="category_order" property="category.categoryOrder"></result>
+
+        <result column="test" property="test"></result>
+    </resultMap>
+    <select id="selectGoodsDTO" resultMap="rmGoods">
+        SELECT g.*,c.* FROM t_goods g,t_category c WHERE g.category_id = c.category_id
+    </select>
+
+    <insert id="insert" parameterType="com.xiaxinyu.mybatis.entity.Goods">
+        INSERT INTO t_goods (title,sub_title,original_cost,current_price,discount,is_free_delivery,category_id)
+            VALUES(#{title},#{subTitle},#{originalCost},#{currentPrice},#{discount},#{isFreeDelivery},#{categoryId})
+
+        <selectKey resultType="Integer" keyProperty="goodsId" order="AFTER">
+            <!--获取当前连接最后产生的id号-->
+            SELECT last_insert_id()
+        </selectKey>
+    </insert>
+
+    <update id="update" parameterType="com.xiaxinyu.mybatis.entity.Goods">
+        UPDATE t_goods SET title = #{title}, sub_title = #{subTitle},original_cost = #{currentPrice},is_free_delivery = #{isFreeDelivery},category_id = #{categoryId}
+        WHERE goods_id =#{goodsId}
+    </update>
+
+    <delete id="delete" parameterType="Integer">
+        DELETE FROM t_goods WHERE goods_id = #{value}
+    </delete>
+
+</mapper>
