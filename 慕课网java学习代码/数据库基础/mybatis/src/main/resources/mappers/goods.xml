@@ -68,5 +68,18 @@
     <delete id="delete" parameterType="Integer">
         DELETE FROM t_goods WHERE goods_id = #{value}
     </delete>
+    
+    <select id="dynamicSQL" parameterType="java.util.Map" resultType="com.xiaxinyu.mybatis.entity.Goods">
+        SELECT * FROM t_goods
+        <where>
+            <if test="categoryId != null">
+                AND category_id = #{categoryId}
+            </if>
+            <if test="currentPrice != null">
+                AND current_price &lt; #{currentPrice}
+            </if>
+        </where>
+
+    </select>
 
 </mapper>

@@ -214,4 +214,27 @@ public class MybatisTestor {
             MybatisUtils.closeSession(sqlSession);
         }
     }
+
+    @Test
+    public void testDynamicSQL(){
+        SqlSession sqlSession = null;
+        try{
+            sqlSession = MybatisUtils.openSession();
+            Map param = new HashMap();
+            param.put("categoryId",44);
+            param.put("currentPrice",400);
+            List<Goods> goods = sqlSession.selectList("goods.dynamicSQL",param);
+            for(Goods good : goods){
+                System. out.println(good.getTitle());
+            }
+            sqlSession.commit();
+        }catch (Exception e){
+            if(sqlSession != null)
+                sqlSession.rollback();
+            throw e;
+        }finally {
+            MybatisUtils.closeSession(sqlSession);
+        }
+    }
+
 }
