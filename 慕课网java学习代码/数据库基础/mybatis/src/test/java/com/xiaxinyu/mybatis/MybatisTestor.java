@@ -2,6 +2,7 @@ package com.xiaxinyu.mybatis;
 
 import com.xiaxinyu.mybatis.dto.GoodsDTO;
 import com.xiaxinyu.mybatis.entity.Goods;
+import com.xiaxinyu.mybatis.entity.GoodsDetail;
 import com.xiaxinyu.mybatis.entity.Student;
 import com.xiaxinyu.mybatis.utils.MybatisUtils;
 import org.apache.ibatis.io.Resources;
@@ -282,6 +283,39 @@ public class MybatisTestor {
             sqlSession = MybatisUtils.openSession();
             Goods goods = sqlSession.selectOne("goods.selectById",1603);
             System.out.println(goods.hashCode());
+        }catch (Exception e){
+            throw e;
+        }finally {
+            MybatisUtils.closeSession(sqlSession);
+        }
+    }
+    
+    @Test
+    public void testOneToMany(){
+        SqlSession sqlSession = null;
+        try{
+            sqlSession = MybatisUtils.openSession();
+            List<Goods> list = sqlSession.selectList("goods.selectOneToMany");
+            for(Goods goods : list ){
+                System.out.println(goods.getTitle() + goods.getGoodsDetails().size());
+            }
+        }catch (Exception e){
+            throw e;
+        }finally {
+            MybatisUtils.closeSession(sqlSession);
+        }
+    }
+
+    @Test
+    public void testManyToOne(){
+        SqlSession sqlSession = null;
+        try{
+            sqlSession = MybatisUtils.openSession();
+            List<GoodsDetail> list = sqlSession.selectList("goodsDetail.selectManyToOne");
+            System.out.println(list.get(0).getGoods());
+            for(GoodsDetail gd : list ){
+                System.out.println(gd.getGdPicUrl() + gd.getGoods().getTitle());
+            }
         }catch (Exception e){
             throw e;
         }finally {

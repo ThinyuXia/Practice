@@ -96,4 +96,28 @@
 
     </select>
 
+    <!-- resultMap用于说明一对多或多对一的映射逻辑
+         id 是resultMap属性引用的标志
+         type指向One的实体(Goods)
+         -->
+
+    <resultMap id="rmGoods1" type="com.xiaxinyu.mybatis.entity.Goods">
+        <!-- 映射Goods对象的主键到goods_id字段 -->
+        <id column="goods_id" property="goodsId"/>
+        <!-- 在SELECT 得到结果后，对所有Goods对象遍历得到goods_id字段值
+             并带入到goodsDetail.selectByGoodsId中进行查询，将
+             得到的商品详情集合赋值给goods对象中的goodsDetails对象
+         -->
+        <collection column="goods_id" property="goodsDetails" select="goodsDetail.selectByGoodsId"/>
+    </resultMap>
+    <!-- 根据一查询多
+         此时Goods是一，在OneToMany的前面
+         所以在goods.xml写select标签和resultMap
+     -->
+    <select id="selectOneToMany" resultMap="rmGoods1">
+        SELECT * FROM t_goods limit 0,2
+    </select>
+
+
+
 </mapper>

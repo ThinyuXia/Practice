@@ -22,5 +22,6 @@
     <mappers>
         <mapper resource="mappers/goods.xml"/>
         <mapper resource="mappers/student.xml"/>
+        <mapper resource="mappers/goods_detail.xml"/>
     </mappers>
 </configuration>
