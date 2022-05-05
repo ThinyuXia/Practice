@@ -64,7 +64,7 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>4.0</version>
+            <version>4.0.1</version>
         <!--依赖只参与编译测试，不进行发布-->
             <scope>provided</scope>
         </dependency>
@@ -72,6 +72,12 @@
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-core</artifactId>
             <version>9.0.55</version>
+        </dependency>
+        <!--FastJSON java对象序列化组件-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.62</version>
         </dependency>
     </dependencies>
 </project>
