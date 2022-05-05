@@ -14,7 +14,7 @@
     <!--头部导航栏-->
     <div class="layui-header">
         <!--系统标题-->
-        <div class="layui-logo" style="font-size:18px">慕课网办公OA系统</div>
+        <div class="layui-logo" style="font-size:18px">企业办公OA系统</div>
         <!--右侧当前用户信息-->
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
@@ -23,11 +23,11 @@
                     <span class="layui-icon layui-icon-user" style="font-size: 20px">
                     </span>
                     <!--用户信息-->
-                    姓名[部门-职务]
+                    ${current_employee.name}[${current_department.departmentName}-${current_employee.title}]
                 </a>
             </li>
             <!--注销按钮-->
-            <li class="layui-nav-item"><a href="#">注销</a></li>
+            <li class="layui-nav-item"><a href="/logout">注销</a></li>
         </ul>
     </div>
     <!--左侧菜单栏-->

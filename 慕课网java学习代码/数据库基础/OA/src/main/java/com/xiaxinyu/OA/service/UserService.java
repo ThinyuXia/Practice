@@ -5,6 +5,8 @@ import com.xiaxinyu.OA.dao.UserDao;
 import com.xiaxinyu.OA.entity.Node;
 import com.xiaxinyu.OA.entity.User;
 import com.xiaxinyu.OA.service.exception.BusinessException;
+import com.xiaxinyu.OA.utils.MD5Utils;
+
 import java.util.List;
 
 public class UserService {
@@ -25,7 +27,7 @@ public class UserService {
             //抛出用户不存在异常
             throw new BusinessException("L001","用户名不存在");
         }
-        if(! user.getPassword().equals(password)){
+        if(! user.getPassword().equals(MD5Utils.MD5Digest(password,user.getSalt()))){
             //抛出密码错误异常
             throw new BusinessException("L002","密码错误");
         }
