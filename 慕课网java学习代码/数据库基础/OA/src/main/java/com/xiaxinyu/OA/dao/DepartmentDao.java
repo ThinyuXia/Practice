@@ -1,7 +1,6 @@
 package com.xiaxinyu.OA.dao;
 
 import com.xiaxinyu.OA.entity.Department;
-import com.xiaxinyu.OA.entity.Employee;
 
 /**
  * 部门服务

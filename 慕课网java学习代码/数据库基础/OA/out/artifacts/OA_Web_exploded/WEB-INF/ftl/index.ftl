@@ -47,7 +47,7 @@
                     <!--子节点-->
                     <#if node.nodeType == 2>
                     <dd class="function" data-parent-id="${node.parentId}">
-                        <a href="javascript:void(0)" target="ifmMain">${node.nodeName}</a>
+                        <a href="${node.url}" target="ifmMain">${node.nodeName}</a>
                     </dd>
                     </#if>
                 </#list>
@@ -56,7 +56,7 @@
     </div>
     <!--主体部分采用iframe嵌入其他页面-->
     <div class="layui-body" style="overflow-y: hidden">
-        <iframe name="ifmMain" style="border: 0px;width: 100%;height: 100%"></iframe>
+        <iframe name="ifmMain" src="/forward/notice" style="border: 0px;width: 100%;height: 100%"></iframe>
     </div>
     <!--版权信息-->
     <div class="layui-footer">

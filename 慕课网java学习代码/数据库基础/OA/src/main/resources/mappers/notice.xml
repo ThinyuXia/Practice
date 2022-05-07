@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--1.namespace与要实现的接口的完全限定名一致-->
+<mapper namespace="com.xiaxinyu.OA.dao.NoticeDao">
+    <!-- 2.id与方法名对应
+         3.parameterType 与方法的参数类型对应
+         4.resultType 与方法的返回值类型对应
+     -->
+    <insert id="insert" parameterType="com.xiaxinyu.OA.entity.Notice" useGeneratedKeys="true" keyProperty="noticeId" keyColumn="notice_id">
+        INSERT INTO sys_notice( receiver_id, content, create_time) VALUES (#{receiverId}, #{content}, #{createTime})
+    </insert>
+
+    <select id="selectByReceiverId" parameterType="Long" resultType="com.xiaxinyu.OA.entity.Notice">
+        SELECT * FROM sys_notice WHERE receiver_id = #{value} ORDER BY create_time DESC LIMIT 0,100;
+    </select>
+</mapper>

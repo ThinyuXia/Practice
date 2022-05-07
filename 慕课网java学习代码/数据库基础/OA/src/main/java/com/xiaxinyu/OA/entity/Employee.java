@@ -1,17 +1,17 @@
 package com.xiaxinyu.OA.entity;
 
 public class Employee {
-    private Integer employeeId;
+    private Long employeeId;
     private String name;
     private Long departmentId;
     private String title;
     private Integer level;
 
-    public Integer getEmployeeId() {
+    public Long getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(Integer employeeId) {
+    public void setEmployeeId(Long employeeId) {
         this.employeeId = employeeId;
     }
 

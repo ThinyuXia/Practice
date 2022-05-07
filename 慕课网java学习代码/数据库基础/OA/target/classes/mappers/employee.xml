@@ -9,4 +9,18 @@
     <select id="selectById" parameterType="Long" resultType="com.xiaxinyu.OA.entity.Employee">
         SELECT * FROM adm_employee WHERE employee_id = #{value}
     </select>
+
+
+    <select id="selectLeader" parameterType="com.xiaxinyu.OA.entity.Employee" resultType="com.xiaxinyu.OA.entity.Employee">
+        SELECT * FROM adm_employee WHERE
+        <if test="emp.level &lt; 7">
+            level = 7 AND department_id = #{emp.departmentId}
+        </if>
+        <if test="emp.level == 7">
+            level = 8
+        </if>
+        <if test="emp.level == 8">
+            employee_id = #{emp.employeeId}
+        </if>
+    </select>
 </mapper>
