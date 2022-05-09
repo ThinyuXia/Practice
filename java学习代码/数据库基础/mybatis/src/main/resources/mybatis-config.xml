@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 开启驼峰命名转换 ：goods_id => goodsId -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!-- 设置数据库类型 -->
+            <property name="helperDialect" value="mysql"/>
+            <!-- 设置参数合理化 -->
+            <property name="reasonable" value="true"/>
+        </plugin>
+    </plugins>
+
+    <environments default="dev">
+        <environment id="dev">
+            <transactionManager type="JDBC"/>
+<!--            <dataSource type="POOLED">-->
+<!--                <property name="driver" value="com.mysql.jdbc.Driver"/>-->
+<!--                <property name="url" value="jdbc:mysql://localhost:3306/babytun?useUnicode=true&amp;ampcharacterEncoding=utf-8"/>-->
+<!--                <property name="username" value="root"/>-->
+<!--                <property name="password" value="xiaxinyv6"/>-->
+            <dataSource type="com.xiaxinyu.mybatis.datasource.C3P0DataSourceFactory">
+                    <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+                    <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/babytun?useUnicode=true&amp;ampcharacterEncoding=utf-8"/>
+                    <property name="user" value="root"/>
+                    <property name="password" value="xiaxinyv6"/>
+                    <property name="initialPoolSize" value="5"/>
+                    <property name="maxPoolSize" value="20"/>
+                    <property name="minPoolSize" value="5"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="mappers/goods.xml"/>
+        <mapper resource="mappers/student.xml"/>
+        <mapper resource="mappers/goods_detail.xml"/>
+    </mappers>
+
+<!--    <mappers>-->
+<!--        <mapper class="com.xiaxinyu.mybatis.dao.GoodsDAO"></mapper>-->
+<!--        <package name="com.xiaxinyu.mybatis.dao"/>-->
+<!--    </mappers>-->
+</configuration>

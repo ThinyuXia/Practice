@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="goodsDetail">
+    <select id="selectByGoodsId" parameterType="Integer" resultType="com.xiaxinyu.mybatis.entity.GoodsDetail">
+        SELECT * FROM t_goods_detail WHERE goods_id = #{value}
+    </select>
+
+    <resultMap id="rmGoodsDetail" type="com.xiaxinyu.mybatis.entity.GoodsDetail">
+        <id column="gd_id" property="gdId"/>
+        <!-- 因为GoodsDetail对象的goods_id属性被用做select标签的查询条件，所以变成null，
+             需要使用result标签手动进行数据回填
+         -->
+        <result column="goods_id" property="goodsId"/>
+        <association property="goods" column="goods_id" select="goods.selectById"/>
+    </resultMap>
+
+    <!-- 根据多查询一
+         此时GoodsDetail是多，在ManyToOne的前面
+         所以在goods_detail.xml写select标签和resultMap
+     -->
+    <select id="selectManyToOne" resultMap="rmGoodsDetail">
+        SELECT * FROM t_goods_detail limit 50,100
+    </select>
+</mapper>
