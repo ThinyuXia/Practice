@@ -140,3 +140,77 @@ rpm -ql 应用名 #查看安装后输出的文件清单
 yum remove -[y] 应用名 #全自动卸载指定应用
 ```
 
+##### 六、linux系统管理命令
+
+```bash
+ifconfig #获取ip地址
+netstat -tulpn 或者 netstat -ano #查看网络进程m 
+# netstat参数说明
+# t : 显示tcp传输协议的连接状况
+# u : 显示udp协议连接状况
+# l : 显示处于监听状态的网络连接
+#	p : 显示应用PID和程序名称
+# n : 显示ip地址
+# a : 显示所有连接
+# o : 显示计时器
+ps -ef #查看系统进程
+ps -ef | grep vim #查看启动命令是 vim 的进程
+kill -9 PID #强制关闭PID进程
+kill -s QUIT PID #正常关闭指定进程
+```
+
+##### 七、应用服务化
+
+```bash
+systemctl start #启动服务
+systemctl stop #启动服务
+systemctl restart #重启服务
+systemctl enable #设置开机启动
+systemctl disable #禁止开机启动
+systemctl status #查看服务状态
+daemon-reload #重载服务配置文件
+list-unit-files #列出系统中所有服务和状态
+```
+
+
+
+##### 八、用户权限分配
+
+用户与用户组常用命令
+
+```bash
+useradd #创建新用户
+passwd #密码
+usermod #修改用户信息/分配组（覆盖原组）
+groupadd #创建新的用户组
+groups #查看当前用户所属组
+chown #更改文件的属主或属组
+chown 属主:属组 文件名
+chmod #更改文件的访问权限
+chomd 750 #清空其他用户权限 
+newgrp #切换当前用户组
+sudo #让普通用户拥有超级管理员的执行权限
+visudo #授权命令
+```
+
+![ONwcs1.md.png](https://s1.ax1x.com/2022/05/10/ONwcs1.md.png)
+
+
+
+##### 九、防火墙设置
+
+```bash
+firewall-cmd --state #查看防火墙状态
+firewall-cmd --list-ports #查看开放端口
+firewall-cmd --zone=public --permanent --add-port=8080/tcp #开放单个端口
+firewall-cmd --reload #针对永久性更改需要重新加载防火墙配置
+firewall-cmd --zone=public --permanent --remove-port=8080/tcp #移除单个端口
+firewall-cmd --zone=public --permanent --remove-port=8000-9000 #开发范围内端口
+```
+
+
+
+##### 十、Bash Shell
+
+
+
