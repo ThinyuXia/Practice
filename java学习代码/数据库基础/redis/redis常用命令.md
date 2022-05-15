@@ -33,5 +33,11 @@ incr key #将指定key的数字值自增1
 decr key #将指定key的数字值自减1
 incrby key  value#将指定key的数字值增加value
 decr key #将指定key的数字值减少value
+rpush listkey a b c #在数组右侧尾部添加a，b，c三个元素 
+lpush listkey a b c #在数组左侧尾部添加a，b，c三个元素
+rpop listkey #从右侧弹出一个元素
+lpop listkey 2#左侧弹出2个元素
+lrange listkey 0 -1 #输出数组所有元素
+
 ```
 
