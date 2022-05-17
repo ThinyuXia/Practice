@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu-item {
+            background-color: aqua;
+            text-align: center;
+            /* 行高等于div高度让字体竖直方向居中 */
+            line-height: 70px;
+            margin-bottom: 1px;
+            width: 100px;
+            height: 70px;
+            position: relative;
+        }
+
+        .menu-item:hover {
+            background-color: lightcoral;
+        }
+
+        .sub-menu {
+            position: absolute;
+            text-align: center;
+            /* 行高等于div高度让字体竖直方向居中 */
+            line-height: 70px;
+            padding-left: 1px;
+            width: 100px;
+            left: 100px;
+            top: 0px
+        }
+
+        .sub-menu-item {
+            margin-bottom: 1px;
+            background-color: aqua;
+        }
+
+        .sub-menu-item:hover {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu1" class="menu-item" onmouseover="show_subMenu(this)" onmouseleave="hide_subMenu(this)">菜单项1
+        <div class="sub-menu" style="display:none">
+            <div class="sub-menu-item">子菜单1</div>
+            <div class="sub-menu-item">子菜单2</div>
+            <div class="sub-menu-item">子菜单3</div>
+        </div>
+    </div>
+
+    <div id="menu1" class="menu-item" onmouseover="show_subMenu(this)" onmouseleave="hide_subMenu(this)">菜单项2
+        <div class="sub-menu" style="display:none">
+            <div class="sub-menu-item">子菜单1</div>
+            <div class="sub-menu-item">子菜单2</div>
+            <div class="sub-menu-item">子菜单3</div>
+            <div class="sub-menu-item">子菜单4</div>
+        </div>
+    </div>
+    <div id="menu1" class="menu-item" onmouseover="show_subMenu(this)" onmouseleave="hide_subMenu(this)">菜单项3
+        <div class="sub-menu" style="display:none">
+            <div class="sub-menu-item">子菜单1</div>
+            <div class="sub-menu-item">子菜单2</div>
+            <div class="sub-menu-item">子菜单3</div>
+        </div>
+    </div>
+    <div id="menu1" class="menu-item" onmouseover="show_subMenu(this)" onmouseleave="hide_subMenu(this)">菜单项4
+        <div class="sub-menu" style="display:none">
+            <div class="sub-menu-item">子菜单1</div>
+            <div class="sub-menu-item">子菜单2</div>
+            <div class="sub-menu-item">子菜单3</div>
+        </div>
+    </div>
+    <div id="menu1" class="menu-item" onmouseover="show_subMenu(this)" onmouseleave="hide_subMenu(this)">菜单项5
+        <div class="sub-menu" style="display:none">
+            <div class="sub-menu-item">子菜单1</div>
+            <div class="sub-menu-item">子菜单2</div>
+            <div class="sub-menu-item">子菜单3</div>
+            <div class="sub-menu-item">子菜单4</div>
+        </div>
+    </div>
+    <div id="menu1" class="menu-item" onmouseover="show_subMenu(this)" onmouseleave="hide_subMenu(this)">菜单项6
+        <div class="sub-menu" style="display:none">
+            <div class="sub-menu-item">子菜单1</div>
+            <div class="sub-menu-item">子菜单2</div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    function show_subMenu(obj) {
+        var menu = obj;
+        var submenus = obj.getElementsByClassName("sub-menu");
+        var submenu = submenus[0];
+        submenu.style.display = "block";
+        console.log(submenu);
+    }
+
+    function hide_subMenu(obj) {
+        var menu = obj;
+        var submenus = obj.getElementsByClassName("sub-menu");
+        var submenu = submenus[0];
+        submenu.style.display = "none";
+        console.log(submenu);
+    }
+</script>
+
+</html>
