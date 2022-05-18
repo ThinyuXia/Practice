@@ -1,4 +1,4 @@
-package com.xiaxinyu.spring.ioc.entity.com.xiaxinyu.spring.ioc;
+package com.xiaxinyu.spring.ioc;
 
 import com.xiaxinyu.spring.ioc.entity.Apple;
 import com.xiaxinyu.spring.ioc.entity.Child;

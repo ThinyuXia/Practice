@@ -37,4 +37,12 @@
         <property name="name" value="luna"/>
         <property name="apple" ref="softApple"/>
     </bean>
+
+<!--    利用静态工厂获取对象-->
+    <bean id="apple1" class="com.xiaxinyu.spring.ioc.factory.AppleStaticFactory" factory-method="createSweetApple"/>
+
+
+<!--    利用工厂实例方法创建对象-->
+    <bean id="factoryInstance" class="com.xiaxinyu.spring.ioc.factory.AppleFactoryInstance"/>
+    <bean id="apple2" factory-bean="factoryInstance" factory-method="createSweetApple"/>
 </beans>

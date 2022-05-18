@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    在IoC容器启动时，自动由Spring实例化Apple，生成名为sweetApple的对象并放到容器中-->
+    <bean id="sweetApple" class="com.xiaxinyu.spring.ioc.entity.Apple">
+        <property name="color" value="绿色"/>
+        <property name="origin" value="欧洲"/>
+        <property name="title" value="绿富士"/>
+    </bean>
+
+<!--    没有id和name属性的bean默认使用类名全称作为bean标识-->
+    <bean class="com.xiaxinyu.spring.ioc.entity.Apple">
+        <property name="color" value="紫色"/>
+        <property name="origin" value="欧洲"/>
+        <property name="title" value="紫富士"/>
+    </bean>
+
+</beans>
