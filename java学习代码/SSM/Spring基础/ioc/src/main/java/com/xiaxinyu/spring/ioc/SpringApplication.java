@@ -32,5 +32,7 @@ public class SpringApplication {
 
         Apple apple1 = context.getBean("com.xiaxinyu.spring.ioc.entity.Apple",Apple.class);
         System.out.println(apple1.getTitle());
+
+
     }
 }
