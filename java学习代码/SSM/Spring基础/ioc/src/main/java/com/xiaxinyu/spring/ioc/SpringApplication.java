@@ -2,6 +2,7 @@ package com.xiaxinyu.spring.ioc;
 
 import com.xiaxinyu.spring.ioc.entity.Apple;
 import com.xiaxinyu.spring.ioc.entity.Child;
+import com.xiaxinyu.spring.ioc.entity.Company;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -33,6 +34,8 @@ public class SpringApplication {
         Apple apple1 = context.getBean("com.xiaxinyu.spring.ioc.entity.Apple",Apple.class);
         System.out.println(apple1.getTitle());
 
+        Company company = context.getBean("company",Company.class);
+        System.out.println(company);
 
     }
 }

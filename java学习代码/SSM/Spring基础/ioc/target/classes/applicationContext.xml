@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!--    在IoC容器启动时，自动由Spring实例化Apple，生成名为sweetApple的对象并放到容器中-->
+    <!--    在IoC容器启动时，自动由Spring实例化Apple，生成名为sweetApple的对象并放到容器中-->
     <bean id="sweetApple" class="com.xiaxinyu.spring.ioc.entity.Apple">
         <property name="color" value="红色"/>
         <property name="origin" value="欧洲"/>
@@ -33,16 +33,56 @@
         <property name="apple" ref="sourApple"/>
     </bean>
 
+    <!--    利用setter实现对象依赖注入-->
     <bean id="luna" class="com.xiaxinyu.spring.ioc.entity.Child">
         <property name="name" value="luna"/>
         <property name="apple" ref="softApple"/>
     </bean>
 
-<!--    利用静态工厂获取对象-->
+    <!--    利用静态工厂获取对象-->
     <bean id="apple1" class="com.xiaxinyu.spring.ioc.factory.AppleStaticFactory" factory-method="createSweetApple"/>
 
 
-<!--    利用工厂实例方法创建对象-->
+    <!--    利用工厂实例方法创建对象-->
     <bean id="factoryInstance" class="com.xiaxinyu.spring.ioc.factory.AppleFactoryInstance"/>
     <bean id="apple2" factory-bean="factoryInstance" factory-method="createSweetApple"/>
+
+
+    <bean id="c1" class="com.xiaxinyu.spring.ioc.entity.Computer">
+        <constructor-arg name="brand" value="联想"/>
+        <constructor-arg name="type" value="联想"/>
+        <constructor-arg name="sn" value="台式机"/>
+        <constructor-arg name="price" value="3085"/>
+    </bean>
+
+    <bean id="company" class="com.xiaxinyu.spring.ioc.entity.Company">
+        <property name="rooms">
+            <list>
+                <value>2001-总裁办</value>
+                <value>2002-总经理办公室</value>
+                <value>2003-研发部会议室</value>
+            </list>
+        </property>
+
+        <property name="computers">
+            <map>
+                <entry key="dev-88172" value-ref="c1"/>
+                <entry key="dev-88173">
+                    <bean class="com.xiaxinyu.spring.ioc.entity.Computer ">
+                        <constructor-arg name="brand" value="联想"/>
+                        <constructor-arg name="type" value="联想"/>
+                        <constructor-arg name="sn" value="台式机"/>
+                        <constructor-arg name="price" value="3085"/>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+
+        <property name="info">
+            <props>
+                 <prop key="phone">8304011</prop>
+                 <prop key="address">北京市</prop>
+            </props>
+        </property>
+    </bean>
 </beans>

@@ -5,7 +5,8 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
 <!--    在IoC容器启动时，自动由Spring实例化Apple，生成名为sweetApple的对象并放到容器中-->
-    <bean id="sweetApple" class="com.xiaxinyu.spring.ioc.entity.Apple">
+<!--    name可一次为bean标签设置多个标识-->
+    <bean name="sweetApple,goodApple" class="com.xiaxinyu.spring.ioc.entity.Apple">
         <property name="color" value="绿色"/>
         <property name="origin" value="欧洲"/>
         <property name="title" value="绿富士"/>
