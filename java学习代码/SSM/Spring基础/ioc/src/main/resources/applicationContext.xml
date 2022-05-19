@@ -33,6 +33,7 @@
         <property name="apple" ref="sourApple"/>
     </bean>
 
+<!--    利用setter实现对象依赖注入-->
     <bean id="luna" class="com.xiaxinyu.spring.ioc.entity.Child">
         <property name="name" value="luna"/>
         <property name="apple" ref="softApple"/>
