@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" href="static/css/slide.css">
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/slide.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .ck-slide {
+            width: 1450px;
+            height: 640px;
+        }
+
+        .ck-slide ul.ck-slide-wrapper {
+            height: 320px;
+        }
+
+        #nav {
+            background-color: lightseagreen;
+            height: 50px;
+        }
+
+        #nav>#nav-content {
+            text-align: center;
+            height: 50px;
+            display: inline;
+            line-height: 50px;
+            margin-left: 50px;
+        }
+
+        a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        #footer {
+            background-color: lightseagreen;
+            width: 1450px;
+            height: 130px;
+        }
+
+        #footer-content {
+            margin: auto;
+            height: 50px;
+            display: inline;
+            line-height: 130px;
+            color: aliceblue;
+            margin-left: calc(665px);
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="nav">
+        <div id="nav-content"><a href="#">主页</a></div>
+        <div id="nav-content"><a href="#">关于我</a></div>
+    </div>
+
+    <div class="ck-slide">
+        <ul class="ck-slide-wrapper">
+            <li>
+                <a href="http://createthink.net"><img src="static/images/1.jpg" alt="" style="width:1450px;"></a>
+            </li>
+            <li style="display:none">
+                <a href="http://www.oschina.net"><img src="static/images/2.jpg" alt="" style="width:1450px;"></a>
+            </li>
+            <li style="display:none">
+                <a href="javascript:;"><img src="static/images/3.jpg" alt="" style="width:1450px;"></a>
+            </li>
+            <li style="display:none">
+                <a href="javascript:;"><img src="static/images/4.jpg" alt="" style="width:1450px;"></a>
+            </li>
+            <li style="display:none">
+                <a href="javascript:;"><img src="static/images/5.jpg" alt="" style="width:1450px;"></a>
+            </li>
+        </ul>
+        <a href="javascript:;" class="ctrl-slide ck-prev">上一张</a>
+        <a href="javascript:;" class="ctrl-slide ck-next">下一张</a>
+        <div class="ck-slidebox">
+            <div class="slideWrap">
+                <ul class="dot-wrap">
+                    <li class="current"><em>1</em></li>
+                    <li><em>2</em></li>
+                    <li><em>3</em></li>
+                    <li><em>4</em></li>
+                    <li><em>5</em></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div id="footer">
+        <div id="footer-content">这里是footer部分</div>
+    </div>
+    <script>
+        $('.ck-slide').ckSlide({
+            autoPlay: true
+            /*dir:"x"*/
+        });
+    </script>
+</body>
+
+</html>
