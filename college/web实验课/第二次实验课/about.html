@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" href="static/css/slide.css">
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/slide.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #nav {
+            background-color: lightseagreen;
+            height: 50px;
+        }
+
+        #nav>#nav-content {
+            text-align: center;
+            height: 50px;
+            display: inline;
+            line-height: 50px;
+            margin-left: 50px;
+        }
+
+        a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        #footer {
+            background-color: lightseagreen;
+            width: 1450px;
+            height: 130px;
+        }
+
+        #footer-content {
+            height: 50px;
+            display: inline;
+            line-height: 130px;
+            color: aliceblue;
+            margin-left: calc(605px);
+
+        }
+
+        #author-intro {
+            background-color: lightyellow;
+            width: 1450px;
+            height: 650px;
+            padding-top: 1px;
+        }
+
+        #author-intor-avatar {
+            margin: 50px;
+            display: inline-block;
+            width: 500px;
+            height: 500px;
+            position: relative;
+        }
+
+        #author-info {
+            margin: 50px;
+            display: inline-block;
+            box-sizing: border-box;
+            width: 700px;
+            height: 500px;
+            border: lightpink 3px solid;
+            border-radius: 5px;
+            position: absolute;
+        }
+
+        #author-info-intro {
+            display: inline-block;
+            font-size: large;
+            color: lightcoral;
+        }
+
+        #author-info-award {
+            display: inline-block;
+            font-size: large;
+            color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="nav">
+        <div id="nav-content"><a href="index.html">主页</a></div>
+        <div style="color:#fff; display: inline;font-size: large;margin-left: 50px;">|</div>
+        <div id="nav-content"><a href="">关于我</a></div>
+    </div>
+
+    <div id="author-intro">
+        <div id="author-intor-avatar">
+            <img src="static/images/avatar.png" style="border-radius: 10px; position: absolute;" alt="" width="500"
+                height="500">
+        </div>
+        <div id="author-info">
+            <div id="author-info-intro">
+                <br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;个人信息：CS专业的一名大二本科生，喜欢打羽毛球，平时写代码，做算法题
+                <br>
+                <br>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div id="author-info-award">
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;获奖经历：
+                <br>
+                <br>
+                <ul>
+                    <li>第十届软件杯获得国家级二等奖</li>
+                    <li>第三届吉林省大学生人工智能创新大赛二等奖</li>
+                    <li>大学生数学建模竞赛吉林省三等奖</li>
+                    <li>大学生数学竞赛吉林省二等奖奖</li>
+                    <li>蓝桥杯吉林省一等奖</li>
+                </ul>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div id="footer-content">&nbsp;&nbsp;© Copyright 2022 by xiaxinyu</div>
+    </div>
+    <script>
+        $('.ck-slide').ckSlide({
+            autoPlay: true
+            /*dir:"x"*/
+        });
+    </script>
+</body>
+
+</html>
