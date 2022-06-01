@@ -85,4 +85,7 @@
             </props>
         </property>
     </bean>
+    <bean id="userDao" class="com.xiaxinyu.spring.ioc.bookshop.dao.UserDao" scope="prototype"> 
+
+    </bean>
 </beans>
