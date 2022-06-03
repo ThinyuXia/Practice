@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <environments default="dev">
+        <environment id="dev">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+            <!--                配置JDBC连接属性-->
+                            <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                            <property name="url" value="jdbc:mysql://localhost:3306/wx_programe?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;severTimezone=Asia/Shanghai&amp;allowPublicKeyRetrieval=true"/>
+                            <property name="username" value="root"/>
+                            <property name="password" value="xiaxinyv6"/>
+            </dataSource>
+        </environment>
+    </environments>
+</configuration>

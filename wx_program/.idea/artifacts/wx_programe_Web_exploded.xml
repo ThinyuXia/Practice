@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="wx_programe:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/wx_programe_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="wx_program/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="wx_program" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
