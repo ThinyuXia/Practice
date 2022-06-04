@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.innovation.wxprogram.dao.UserDao">
+    <select id="selectByOpenid" parameterType="String" resultType="com.innovation.wxprogram.entity.User">
+        SELECT * FROM t_user WHERE openid = #{value}
+    </select>
+
+    <select id="insert" parameterType="com.innovation.wxprogram.entity.User">
+        INSERT INTO t_user(openid,nick_name,real_name,phone_number,sum_distance,session_key) VALUES (#{openid},#{nickName},#{realName},#{phoneNumber},#{sumDistance},#{sessionKey})
+    </select>
+
+    <select id="updateSession" parameterType="com.innovation.wxprogram.entity.User">
+        UPDATE t_user SET session_key=#{sessionKey} WHERE openid=#{openid}
+    </select>
+</mapper>
