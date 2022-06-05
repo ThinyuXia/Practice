@@ -8,4 +8,5 @@ public interface UserDao {
     public User selectBySessionKey(String sessionKey);
     public void insert(User user);
     public void updateSession(User user);
+    public void updateUserInfo(User user);
 }

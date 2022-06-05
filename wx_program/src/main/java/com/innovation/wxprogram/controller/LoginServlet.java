@@ -3,8 +3,10 @@ import com.alibaba.fastjson.JSON;
 import com.innovation.wxprogram.dao.UserDao;
 import com.innovation.wxprogram.dto.UserDTO;
 import com.innovation.wxprogram.entity.User;
+import com.innovation.wxprogram.enums.ResultEnum;
 import com.innovation.wxprogram.service.UserService;
 import com.innovation.wxprogram.utils.RequestUtils;
+import com.innovation.wxprogram.vo.ResultVO;
 import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.ServletException;
@@ -32,24 +34,46 @@ public class LoginServlet extends HttpServlet {
         String code = req.getParameter("code");
         String nickName = req.getParameter("nickName");
 
+
+
         Map json = (Map)JSON.parse(RequestUtils.getOpenId(code));
+
         String openid = (String)json.get("openid");
         String sessionKey = (String) json.get("session_key");
 
-        //说明当前登陆用户是新用户
-        if(userService.selectByOpenid(openid) == null && openid != null){
+        ResultVO result = new ResultVO();
+        if(openid == null){
+            result.setCode(ResultEnum.CODE_ERROR.getCode());
+            result.setMsg(ResultEnum.CODE_ERROR.getMsg());
+            resp.getWriter().println(JSON.toJSONString(result));
+            return;
+        }
+
+
+
+
+        if(code == null || nickName == null || code.equals("") || nickName.equals("")){
+            result.setCode(ResultEnum.PARAM_ERROR.getCode());
+            result.setMsg(ResultEnum.PARAM_ERROR.getMsg());
+            resp.getWriter().println(JSON.toJSONString(result));
+        }else if(userService.selectByOpenid(openid) == null){  //说明当前用户是新用户
             User user = new User();
             user.setOpenid(openid);
             user.setNickName(nickName);
             user.setSessionKey(sessionKey);
             user.setSumDistance(0);
             userService.insert(user);
+            result.setCode(200);
+            result.setMsg("success");
+            result.setData(sessionKey);
+            resp.getWriter().println(JSON.toJSONString(result));
+        }else{
+            result.setCode(ResultEnum.LOGIN_ERROR.getCode());
+            result.setMsg(ResultEnum.LOGIN_ERROR.getMsg());
+            result.setData(sessionKey);
+            resp.getWriter().println(JSON.toJSONString(result));
         }
 
-        Map result = new HashMap<>();
-        result.put("code",200);
-        result.put("msg","success");
-        result.put("session",sessionKey);
-        resp.getWriter().println(JSON.toJSONString(result));
+
     }
 }

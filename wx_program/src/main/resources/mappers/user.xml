@@ -6,10 +6,16 @@
     </select>
 
     <select id="insert" parameterType="com.innovation.wxprogram.entity.User">
-        INSERT INTO t_user(openid,nick_name,real_name,phone_number,sum_distance,session_key) VALUES (#{openid},#{nickName},#{realName},#{phoneNumber},#{sumDistance},#{sessionKey})
+        INSERT INTO t_user(openid,nick_name,sum_distance,session_key) VALUES (#{openid},#{nickName},#{sumDistance},#{sessionKey})
     </select>
 
     <select id="updateSession" parameterType="com.innovation.wxprogram.entity.User">
         UPDATE t_user SET session_key=#{sessionKey} WHERE openid=#{openid}
     </select>
+
+    <select id="updateUserInfo" parameterType="com.innovation.wxprogram.entity.User">
+        UPDATE t_user SET nick_name=#{nickName},real_name=#{realName},phone_number=#{phoneNumber}  WHERE openid=#{openid}
+    </select>
+
+
 </mapper>

@@ -5,7 +5,10 @@ import org.apache.commons.codec.binary.Base64;
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
+import java.security.AlgorithmParameters;
+import java.security.Security;
 import java.security.spec.AlgorithmParameterSpec;
+import java.util.Arrays;
 
 public class WxUtils {
 
@@ -38,4 +41,6 @@ public class WxUtils {
         }
         return result;
     }
+
+
 }

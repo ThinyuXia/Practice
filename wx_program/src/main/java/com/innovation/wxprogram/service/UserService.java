@@ -38,4 +38,11 @@ public class UserService {
         });
     }
 
+    public void updateUserInfo(User user){
+        MybatisUtils.executeUpdate(sqlSession -> {
+            sqlSession.getMapper(UserDao.class).updateUserInfo(user);
+            return null;
+        });
+    }
+
 }

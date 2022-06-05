@@ -51,4 +51,5 @@ public class LoginServlet extends HttpServlet {
         String json = JSON.toJSONString(result);
         resp.getWriter().println(json); //将json字符串向客户端返回
     }
+
 }

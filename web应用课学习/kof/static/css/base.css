@@ -1,9 +1,0 @@
-#kof {
-    width: 100%;
-    height: 800px;
-    background-image: url("../images/background/0.gif");
-    background-size: 200% 100%;
-    /*顶部 居中*/
-    background-position: top;
-
-}
