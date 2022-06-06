@@ -13,8 +13,8 @@ public class UserServiceTest extends TestCase {
     UserService userService = new UserService();
 
     public void testSelectByOpenid() {
-        User user = userService.selectByOpenid("1232131");
-        System.out.println(user.getRealName());
+        User user = userService.selectByOpenid("oq1TZz6dFYf8HzwVqeYhh1KTij5IY");
+        System.out.println(user.getNickName());
     }
 
     public void testInsert() {
@@ -39,6 +39,10 @@ public class UserServiceTest extends TestCase {
         }catch (Exception e){
             System.out.println(e);
         }
+    }
 
+    public void testSelectBySessionKet(){
+        User user = userService.selectBySessionKey("kwDxtgLQFzehkgKiyuL+XQ==");
+        System.out.println(user);
     }
 }

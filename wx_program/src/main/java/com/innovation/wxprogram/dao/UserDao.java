@@ -9,4 +9,5 @@ public interface UserDao {
     public void insert(User user);
     public void updateSession(User user);
     public void updateUserInfo(User user);
+    public void updateDistance(User user);
 }

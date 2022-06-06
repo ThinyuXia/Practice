@@ -5,6 +5,10 @@
         SELECT * FROM t_user WHERE openid = #{value}
     </select>
 
+    <select id="selectBySessionKey" parameterType="String" resultType="com.innovation.wxprogram.entity.User">
+        SELECT * FROM t_user WHERE session_key = #{value}
+    </select>
+
     <select id="insert" parameterType="com.innovation.wxprogram.entity.User">
         INSERT INTO t_user(openid,nick_name,sum_distance,session_key) VALUES (#{openid},#{nickName},#{sumDistance},#{sessionKey})
     </select>
@@ -17,5 +21,8 @@
         UPDATE t_user SET nick_name=#{nickName},real_name=#{realName},phone_number=#{phoneNumber}  WHERE openid=#{openid}
     </select>
 
+    <select id="updateDistance" parameterType="com.innovation.wxprogram.entity.User">
+        UPDATE t_user SET sum_distance=#{sumDistance}  WHERE session_key=#{sessionKey}
+    </select>
 
 </mapper>

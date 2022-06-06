@@ -13,15 +13,11 @@ public class UserService {
      * @return
      */
     public User selectByOpenid(String openid){
-        return (User) MybatisUtils.executeQuery(sqlSession -> {
-            return sqlSession.getMapper(UserDao.class).selectByOpenid(openid);
-        });
+        return (User) MybatisUtils.executeQuery(sqlSession -> sqlSession.getMapper(UserDao.class).selectByOpenid(openid));
     }
 
     public User selectBySessionKey(String sessionKey){
-        return (User) MybatisUtils.executeQuery(sqlSession -> {
-            return sqlSession.getMapper(UserDao.class).selectBySessionKey(sessionKey);
-        });
+        return (User) MybatisUtils.executeQuery(sqlSession -> sqlSession.getMapper(UserDao.class).selectBySessionKey(sessionKey));
     }
 
     public void insert(User user){
@@ -45,4 +41,10 @@ public class UserService {
         });
     }
 
+    public void updateUserDistance(User user){
+        MybatisUtils.executeUpdate(sqlSession -> {
+            sqlSession.getMapper(UserDao.class).updateDistance(user);
+            return null;
+        });
+    }
 }

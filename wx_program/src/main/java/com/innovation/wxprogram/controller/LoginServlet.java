@@ -51,7 +51,6 @@ public class LoginServlet extends HttpServlet {
 
 
 
-
         if(code == null || nickName == null || code.equals("") || nickName.equals("")){
             result.setCode(ResultEnum.PARAM_ERROR.getCode());
             result.setMsg(ResultEnum.PARAM_ERROR.getMsg());

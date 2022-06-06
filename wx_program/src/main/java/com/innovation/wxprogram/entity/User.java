@@ -68,4 +68,16 @@ public class User {
     public void setSessionKey(String sessionKey) {
         this.sessionKey = sessionKey;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "openid='" + openid + '\'' +
+                ", nickName='" + nickName + '\'' +
+                ", realName='" + realName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", sumDistance=" + sumDistance +
+                ", sessionKey='" + sessionKey + '\'' +
+                '}';
+    }
 }

@@ -4,7 +4,8 @@ package com.innovation.wxprogram.enums;
 public enum ResultEnum {
     PARAM_ERROR(1,"参数不正确"),
     LOGIN_ERROR(2,"接口调用错误，当前用户不是新用户，session_key已更新"),
-    CODE_ERROR(3,"登陆凭证码code已过期")
+    CODE_ERROR(3,"登陆凭证码code已过期"),
+    SESSION_KEY_ERROR(4,"session_key不正确")
     ;
 
     private Integer code;
