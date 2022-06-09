@@ -5,9 +5,8 @@ import com.innovation.wxprogram.utils.MybatisUtils;
 
 public interface UserDao {
     public User selectByOpenid(String openid);
-    public User selectBySessionKey(String sessionKey);
+    public User selectBySessionId(String sessionId);
     public void insert(User user);
-    public void updateSession(User user);
     public void updateUserInfo(User user);
     public void updateDistance(User user);
 }

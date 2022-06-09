@@ -42,7 +42,7 @@ public class UserServiceTest extends TestCase {
     }
 
     public void testSelectBySessionKet(){
-        User user = userService.selectBySessionKey("kwDxtgLQFzehkgKiyuL+XQ==");
+        User user = userService.selectBySessionId("kwDxtgLQFzehkgKiyuL+XQ==");
         System.out.println(user);
     }
 }

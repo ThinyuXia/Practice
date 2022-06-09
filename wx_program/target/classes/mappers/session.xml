@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.innovation.wxprogram.dao.SessionDao">
+    <select id="selectBySessionId" parameterType="String" resultType="String">
+        SELECT session_key FROM session WHERE session_id = #{value}
+    </select>
+
+    <select id="insert" parameterType="com.innovation.wxprogram.entity.Session">
+        INSERT INTO session(session_id,session_key) VALUES (#{sessionId},#{sessionKey})
+    </select>
+
+    <select id="update" parameterType="com.innovation.wxprogram.entity.Session">
+        UPDATE session SET session_key=#{sessionKey}  WHERE session_id=#{sessionId}
+    </select>
+</mapper>

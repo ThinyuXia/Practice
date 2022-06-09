@@ -16,8 +16,8 @@ public class UserService {
         return (User) MybatisUtils.executeQuery(sqlSession -> sqlSession.getMapper(UserDao.class).selectByOpenid(openid));
     }
 
-    public User selectBySessionKey(String sessionKey){
-        return (User) MybatisUtils.executeQuery(sqlSession -> sqlSession.getMapper(UserDao.class).selectBySessionKey(sessionKey));
+    public User selectBySessionId(String sessionId){
+        return (User) MybatisUtils.executeQuery(sqlSession -> sqlSession.getMapper(UserDao.class).selectBySessionId(sessionId));
     }
 
     public void insert(User user){
@@ -27,12 +27,6 @@ public class UserService {
         });
     }
 
-    public void updateSession(User user){
-        MybatisUtils.executeUpdate(sqlSession -> {
-            sqlSession.getMapper(UserDao.class).updateSession(user);
-            return null;
-        });
-    }
 
     public void updateUserInfo(User user){
         MybatisUtils.executeUpdate(sqlSession -> {

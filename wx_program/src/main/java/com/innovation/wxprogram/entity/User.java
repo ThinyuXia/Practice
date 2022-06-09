@@ -7,18 +7,18 @@ public class User {
     private String realName;
     private String phoneNumber;
     private Integer sumDistance;
-    private String sessionKey;
+    private String sessionId;
 
     public User() {
     }
 
-    public User(String openid, String nickName, String realName, String phoneNumber, Integer sumDistance, String sessionKey) {
+    public User(String openid, String nickName, String realName, String phoneNumber, Integer sumDistance, String sessionId) {
         this.openid = openid;
         this.nickName = nickName;
         this.realName = realName;
         this.phoneNumber = phoneNumber;
         this.sumDistance = sumDistance;
-        this.sessionKey = sessionKey;
+        this.sessionId = sessionId;
     }
 
     public String getOpenid() {
@@ -61,23 +61,11 @@ public class User {
         this.sumDistance = sumDistance;
     }
 
-    public String getSessionKey() {
-        return sessionKey;
+    public String getSessionId() {
+        return sessionId;
     }
 
-    public void setSessionKey(String sessionKey) {
-        this.sessionKey = sessionKey;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "openid='" + openid + '\'' +
-                ", nickName='" + nickName + '\'' +
-                ", realName='" + realName + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", sumDistance=" + sumDistance +
-                ", sessionKey='" + sessionKey + '\'' +
-                '}';
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
     }
 }

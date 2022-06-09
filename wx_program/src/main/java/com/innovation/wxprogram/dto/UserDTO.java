@@ -5,6 +5,9 @@ public class UserDTO {
     private String realName;
     private String phoneNumber;
 
+    public UserDTO() {
+    }
+
     public UserDTO(String nickName, String realName, String phoneNumber) {
         this.nickName = nickName;
         this.realName = realName;
@@ -35,4 +38,12 @@ public class UserDTO {
         this.phoneNumber = phoneNumber;
     }
 
+    @Override
+    public String toString() {
+        return "UserDTO{" +
+                "nickName='" + nickName + '\'' +
+                ", realName='" + realName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
+    }
 }
