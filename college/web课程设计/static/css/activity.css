@@ -1,0 +1,25 @@
+.current-tab {
+    border-bottom: 4px rgb(223, 6, 41);
+    border-bottom-style: inset;
+}
+
+.activity-card {
+    height: 190px;
+    margin-top: 20px;
+    margin-left: 0px;
+    box-shadow: rgba(195, 195, 195, 0.5) 0px 2px 6px 0px;
+}
+
+.activity-card-tag {
+    border-radius: 0 0 0 10px;
+    background-color: #ca1524;
+    color: white;
+    margin-left: 9px;
+}
+
+.activity-card-footer {
+    text-align: center;
+    background-color: #fbd2d1;
+    height: 50px;
+    line-height: 50px;
+}

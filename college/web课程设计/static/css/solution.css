@@ -1,0 +1,5 @@
+.solution-div:hover {
+    border-top: 4px solid #f27c32;
+    box-shadow: 0px 2px 6px 0px;
+    transition: 0.3s;
+}
