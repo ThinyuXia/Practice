@@ -12,6 +12,13 @@ IoC控制反转是一种设计理念与语言无关，全称Inverse Of Control�
 
 DI依赖注入，全称Dependency Injecttion 是IoC的具体技术实现，是微观实现，在Java中利用反射技术实现对象注入
 
-##### 2.Spring含义
+##### 2.Spring
 
-##### 2.1
+##### 2.1Spring含义
+
+* 狭义：Spring是用来简化java开发的框架(Spring Framework)
+* 广义：Spring是指Spring整个生态体系
+
+##### 2.2Spring核心
+
+IoC容器与AOP面向切面编程
