@@ -3,14 +3,14 @@ package com.xiaxinyu.spring.ioc;
 import com.xiaxinyu.spring.ioc.entity.Apple;
 import com.xiaxinyu.spring.ioc.entity.Child;
 
-public class Application  {
+public class Application {
     public static void main(String[] args) {
-        Apple apple1 = new Apple("红富士","红色","欧洲");
-        Apple apple2 = new Apple("青苹果","绿色","中亚");
-        Apple apple3 = new Apple("黄元帅","黄色","中国");
-        Child lily = new Child("lily",apple1);
-        Child andy = new Child("andy",apple2);
-        Child luna = new Child("luna",apple3);
+        Apple apple1 = new Apple("红富士", "红色", "欧洲");
+        Apple apple2 = new Apple("青苹果", "绿色", "中亚");
+        Apple apple3 = new Apple("黄元帅", "黄色", "中国");
+        Child lily = new Child("lily", apple1);
+        Child andy = new Child("andy", apple2);
+        Child luna = new Child("luna", apple3);
         lily.eat();
         andy.eat();
         luna.eat();
