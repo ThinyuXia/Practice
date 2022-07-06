@@ -236,13 +236,13 @@ for(String beanName : beanNames){
 
 概念：
 
-##### 1.bean scope属性用于决定对象何时被创建与作用范围
+##### 	1.bean scope属性用于决定对象何时被创建与作用范围
 
-##### 2.bean scope配置将影响容器内对象的数量
+##### 	2.bean scope配置将影响容器内对象的数量
 
-##### 3.bean scope默认值singleton(单例)，指全局共享同一个对象实例
+##### 	3.bean scope默认值singleton(单例)，指全局共享同一个对象实例
 
-##### 4.默认情况下bean会在IoC容器创建后自动实例化，全局唯一
+##### 	å4.默认情况下bean会在IoC容器创建后自动实例化，全局唯一
 
 ![截屏2022-07-06 下午7.22.05.png](https://pic.rmb.bdstatic.com/bjh/9433bea57ee0a8219af67b01d0917aae.png)
 
@@ -259,4 +259,37 @@ for(String beanName : beanNames){
 
 
 * 基于注解配置Bean
+
+##### 开启组件扫描
+
+```java
+
+```
+
+##### 优势
+
+* 摆脱繁琐的XML形式的bean与依赖注入配置
+* 基于“声明式”的原则，更适合轻量级的现代企业应用
+* 让代码可读性变得更好，研发人员拥有更好的开发体验
+
+##### 注解类型
+
+* 组件类型注解-声明当前类的功能与职责
+
+		##### 	1.@Component: 组件注解，通用注解，被该注解描述的类将被IoC容器管理并实例化
+
+##### 	2.@Controller：语义注解，说明当前类是MVC应用中的控制器类
+
+##### 	3.@Service：语义注解，说明当前类是Service业务服务类
+
+##### 	4.@Repository：语义注解，说明当前类用于业务持久层，通常描述对应Dao类
+
+* 自动装配注解-根据属性特征自动注入对象
+
+![截屏2022-07-06 下午11.10.08.png](https://pic.rmb.bdstatic.com/bjh/2b9875d2707e0e6fe3f4f9c20db2238f.png)
+
+* 元数据注解-更细化的辅助IoC容器管理对象的注解
+
+![截屏2022-07-06 下午11.52.15.png](https://pic.rmb.bdstatic.com/bjh/e74881c0ba8e9583b16a8c44649c1ada.png)
+
 * 基于Java代码配置Bean
