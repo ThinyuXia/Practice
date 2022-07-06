@@ -115,6 +115,7 @@ IoC容器与AOP面向切面编程
             <map>
                 <entry key="dev-88172" value-ref="c1"/>
                 <entry key="dev-88173">
+                  <!--无法通过getBean方法获取该内部bean-->
                     <bean class="com.xiaxinyu.spring.ioc.entity.Computer ">
                         <constructor-arg name="brand" value="联想"/>
                         <constructor-arg name="type" value="联想"/>
@@ -216,6 +217,44 @@ public class SpringApplication {
 
 * 利用setter方法注入对象
 * 利用构造方法注入对象
+
+##### 查看容器内对象
+
+```java
+ //获取容器内所有beanId的数组
+String[] beanNames = context.getBeanDefinitionNames();
+for(String beanName : beanNames){
+  System.out.println(beanName);
+  System.out.println("类型：" + context.getBean(beanName).getClass().getName());
+  System.out.println("类型：" + context.getBean(beanName).toString());
+}
+```
+
+
+
+##### bean scope属性
+
+概念：
+
+##### 1.bean scope属性用于决定对象何时被创建与作用范围
+
+##### 2.bean scope配置将影响容器内对象的数量
+
+##### 3.bean scope默认值singleton(单例)，指全局共享同一个对象实例
+
+##### 4.默认情况下bean会在IoC容器创建后自动实例化，全局唯一
+
+![截屏2022-07-06 下午7.22.05.png](https://pic.rmb.bdstatic.com/bjh/9433bea57ee0a8219af67b01d0917aae.png)
+
+
+
+![截屏2022-07-06 下午7.39.14.png](https://pic.rmb.bdstatic.com/bjh/24d6a27c2b6ef38d1fe27d0634526098.png)
+
+
+
+##### bean的生命周期
+
+ ![截屏2022-07-06 下午8.10.25.png](https://pic.rmb.bdstatic.com/bjh/c442abaf8a75124dc6ab6e6e0822b2ff.png)
 
 
 

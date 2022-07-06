@@ -52,5 +52,7 @@ public class SpringApplication {
             System.out.println("类型：" + context.getBean(beanName).toString());
         }
 
+        //销毁IoC容器，调用bean标签中的destroy-method方法
+        ((ClassPathXmlApplicationContext) context).registerShutdownHook();
     }
 }
