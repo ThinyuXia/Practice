@@ -29,5 +29,195 @@ DI依赖注入，全称Dependency Injecttion 是IoC的具体技术实现，是�
 
 IoC容器与AOP面向切面编程
 
-* 
-* 
+##### 2.2.1IoC容器初始化
+
+##### 2.2.1.1三种配置方式
+
+* 基于XML配置Bean
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  	
+    <!--    在IoC容器启动时，自动由Spring实例化Apple，生成名为sweetApple的对象并放到容器中
+						1.bean标签默认通过默认构造方法实例化对象	-->
+    <bean id="sweetApple" class="com.xiaxinyu.spring.ioc.entity.Apple">
+        <constructor-arg name="color" value="红色"/>
+        <constructor-arg name="origin" value="欧洲"/>
+        <constructor-arg name="title" value="红富士"/>
+    </bean>
+
+    <bean id="sourApple" class="com.xiaxinyu.spring.ioc.entity.Apple">
+        <constructor-arg index="0" value="绿色"/>
+        <constructor-arg index="1" value="中亚"/>
+        <constructor-arg index="2" value="青苹果"/>
+    </bean>
+
+    <bean id="softApple" class="com.xiaxinyu.spring.ioc.entity.Apple">
+        <property name="color" value="黄色"/>
+        <property name="origin" value="中国"/>
+        <property name="title" value="金帅"/>
+    </bean>
+
+    <bean id="lily" class="com.xiaxinyu.spring.ioc.entity.Child">
+        <property name="name" value="lily"/>
+        <property name="apple" ref="sweetApple"/>
+    </bean>
+
+    <bean id="andy" class="com.xiaxinyu.spring.ioc.entity.Child">
+        <property name="name" value="andy"/>
+        <property name="apple" ref="sourApple"/>
+    </bean>
+
+    <!--    利用setter实现对象依赖注入-->
+    <bean id="luna" class="com.xiaxinyu.spring.ioc.entity.Child">
+        <property name="name" value="luna"/>
+        <property name="apple" ref="softApple"/>
+    </bean>
+
+    <!--    2.利用静态工厂获取对象-->
+    <bean id="apple1" class="com.xiaxinyu.spring.ioc.factory.AppleStaticFactory" factory-method="createSweetApple"/>
+
+
+    <!--    3.利用工厂实例方法创建对象-->
+    <bean id="factoryInstance" class="com.xiaxinyu.spring.ioc.factory.AppleFactoryInstance"/>
+    <bean id="apple2" factory-bean="factoryInstance" factory-method="createSweetApple"/>
+
+
+    <bean id="c1" class="com.xiaxinyu.spring.ioc.entity.Computer">
+        <constructor-arg name="brand" value="联想"/>
+        <constructor-arg name="type" value="联想"/>
+        <constructor-arg name="sn" value="台式机"/>
+        <constructor-arg name="price" value="3085"/>
+    </bean>
+    <!-- 没有id与name的bean默认使用类名全称作为bean标识符-->
+    <bean class="com.xiaxinyu.spring.ioc.entity.Computer">
+        <constructor-arg name="brand" value="联想"/>
+        <constructor-arg name="type" value="联想"/>
+        <constructor-arg name="sn" value="台式机"/>
+        <constructor-arg name="price" value="3085"/>
+    </bean> 
+
+    <bean id="company" class="com.xiaxinyu.spring.ioc.entity.Company">
+        <property name="rooms">
+            <list>
+                <value>2001-总裁办</value>
+                <value>2002-总经理办公室</value>
+                <value>2003-研发部会议室</value>
+            </list>
+        </property>
+
+        <property name="computers">
+            <map>
+                <entry key="dev-88172" value-ref="c1"/>
+                <entry key="dev-88173">
+                    <bean class="com.xiaxinyu.spring.ioc.entity.Computer ">
+                        <constructor-arg name="brand" value="联想"/>
+                        <constructor-arg name="type" value="联想"/>
+                        <constructor-arg name="sn" value="台式机"/>
+                        <constructor-arg name="price" value="3085"/>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+
+        <property name="info">
+            <props>
+                 <prop key="phone">8304011</prop>
+                 <prop key="address">北京市</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
+```
+
+##### 静态工厂
+
+```java
+package com.xiaxinyu.spring.ioc.factory;
+
+import com.xiaxinyu.spring.ioc.entity.Apple;
+/**
+*静态工厂通过静态方法创建对象，隐藏创建对象的细节
+*/
+public class AppleStaticFactory {
+    public static Apple createSweetApple(){
+        Apple apple = new Apple();
+        apple.setTitle("红富士");
+        apple.setOrigin("欧洲");
+        apple.setColor("红色");
+        return apple;
+    }
+}
+
+```
+
+
+
+##### 工厂实例
+
+```java
+package com.xiaxinyu.spring.ioc.factory;
+
+import com.xiaxinyu.spring.ioc.entity.Apple;
+
+/**
+ * 工厂实例方法创建对象是指IoC容器对工厂类进行实例化并调用对应的方法完成实例创建的过程
+ */
+public class AppleFactoryInstance {
+    public Apple createSweetApple(){
+        Apple apple = new Apple();
+        apple.setTitle("红富士");
+        apple.setOrigin("欧洲");
+        apple.setColor("红色");
+        return apple;
+    }
+}
+
+```
+
+
+
+
+
+```java
+public class SpringApplication {
+    public static void main(String[] args) {
+      //初始化IoC容器并实例化对
+        String[] configLocations = {"classpath:applicationContext-1.xml","classpath:applicationContext.xml"};
+      	ApplicationContext context = new ClassPathXmlApplicationContext(configLocations);
+        Apple sweetApple = context.getBean("sweetApple", Apple.class); //从IoC容器中获取bean
+        // Apple sweetApple = (Apple)context.getBean("sweetApple"); 不推荐做法
+        
+    }
+}
+```
+
+##### bean标签补充内容
+
+##### 1.id与name属性相同点
+
+* id 与 name都是设置对象在IoC容器中的唯一标识
+* 两者在同一个配置文件中都不允许出现重复
+* 两者允许在多个配置文件中出现重复，新对象覆盖旧对象
+
+##### 2.id与name属性不同点
+
+* id要求更为严格，一次只能定义一个对象标识（推荐）
+* name更为宽松，一次允许定义多个对象标识（用，分割）
+
+##### 对象依赖注入
+
+概念：依赖注入是指运行时将容器内对象利用反射赋给其他对象的操作
+
+* 利用setter方法注入对象
+* 利用构造方法注入对象
+
+
+
+* 基于注解配置Bean
+* 基于Java代码配置Bean

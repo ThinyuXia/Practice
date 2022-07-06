@@ -31,6 +31,7 @@ public class SpringApplication {
         Apple apple = context.getBean("sweetApple",Apple.class);
         System.out.println(apple.getTitle());
 
+
         //1.当有多个类型相同的匿名bean标签时，IoC容器中他们的标识符为类名全称#{数字(从0开始)}
         //2.使用context.getBean("类全称")方法获取的是第一个bean标签对象
         //3.想获取后续的对象需要加上#以及编号
@@ -50,8 +51,6 @@ public class SpringApplication {
             System.out.println("类型：" + context.getBean(beanName).getClass().getName());
             System.out.println("类型：" + context.getBean(beanName).toString());
         }
-
-
 
     }
 }
