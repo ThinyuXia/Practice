@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+<!--    初始化IoC容器-->
+    <context:component-scan base-package="com.xiaxinyu"></context:component-scan>
+<!--启用Spring AOP注解模式-->
+    <aop:aspectj-autoproxy/>
+
+
+<!--    <bean id="userDao" class="com.xiaxinyu.spring.aop.dao.UserDao"></bean>-->
+<!--    <bean id="employeeDao" class="com.xiaxinyu.spring.aop.dao.EmployeeDao"></bean>-->
+<!--    <bean id="userService" class="com.xiaxinyu.spring.aop.service.UserService">-->
+<!--        <property name="userDao" ref="userDao"></property>-->
+<!--    </bean>-->
+<!--    <bean id="employeeService" class="com.xiaxinyu.spring.aop.service.EmployeeService">-->
+<!--        <property name="employeeDao" ref="employeeDao"></property>-->
+<!--    </bean>-->
+<!--    <bean id="bookShop" class="com.xiaxinyu.spring.aop.homework.BookShop"></bean>-->
+<!--    &lt;!&ndash;AOP配置&ndash;&gt;-->
+<!--    <bean id="methodAspect" class="com.xiaxinyu.spring.aop.aspect.MethodAspect"></bean>-->
+<!--    <bean id="methodChecker" class="com.xiaxinyu.spring.aop.aspect.MethodChecker"></bean>-->
+<!--    <bean id="methodPro" class="com.xiaxinyu.spring.aop.homework.MethodPro"></bean>-->
+<!--    <aop:config>-->
+<!--&lt;!&ndash;        PiontCut 切点，使用execution表达式描述切面的作用范围&ndash;&gt;-->
+<!--&lt;!&ndash;        execution(public * com.xiaxinyu..*.*(..)) 说明切面作用在com.xiaxinyu包下的所有类的所用方法上&ndash;&gt;-->
+<!--        <aop:pointcut id="pointcut" expression="execution(public * com.xiaxinyu..*.*(..))"/>-->
+<!--&lt;!&ndash;        定义切面类&ndash;&gt;-->
+<!--        <aop:aspect ref="methodChecker">-->
+<!--&lt;!&ndash;            before通知，代表在目标方法运行前先执行methodAspect.printExecutionTime()&ndash;&gt;-->
+<!--&lt;!&ndash;            <aop:before method="printExecutionTime" pointcut-ref="pointcut"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <aop:after-returning method="doAfterReturning" returning="ret" pointcut-ref="pointcut"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <aop:after-throwing method="doAfterThrowing" throwing="th" pointcut-ref="pointcut"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <aop:after method="doAfter" pointcut-ref="pointcut"/>&ndash;&gt;-->
+<!--            <aop:around method="check" pointcut-ref="pointcut"/>-->
+
+
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+</beans>
