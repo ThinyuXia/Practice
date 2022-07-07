@@ -10,4 +10,8 @@ public class UserDao implements IUserDao{
     public UserDao(){
         System.out.println("正在创建UserDao:" + this);
     }
+
+    public void insert(){
+        System.out.println("新增用户数据");
+    }
 }

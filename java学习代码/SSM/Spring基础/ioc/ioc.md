@@ -1,5 +1,3 @@
-#### 一、SpringIoC
-
 ##### 1.ioc控制反转
 
 ##### 1.1 ioc概念 
@@ -292,4 +290,26 @@ for(String beanName : beanNames){
 
 ![截屏2022-07-06 下午11.52.15.png](https://pic.rmb.bdstatic.com/bjh/e74881c0ba8e9583b16a8c44649c1ada.png)
 
-* 基于Java代码配置Bean
+* 基于JavaConfig配置IoC容器
+
+##### 优势
+
+* 完全摆脱XML的束缚，使用独立Java类管理对象与依赖
+* 注解配置相对分散，利用Java Config可对配置集中管理
+* 可以在编译时进行依赖检查，不容易出错
+
+
+
+##### Spring Test
+
+概念：
+
+* Spring Test是Spring中用于测试的mokuai
+* Spring Test对JUnit单元测试框架有良好的整合
+* 通过Spring TEst可在JUnit在单元测试时自动初始化IoC容器
+
+Spring与Junit4整合过程
+
+* Maven工程以来spring-test
+* 利用@RunWith与@ContextConfiguration描述测试用例类
+* 测试用例类从容器获取对象完成测试用例的执行
