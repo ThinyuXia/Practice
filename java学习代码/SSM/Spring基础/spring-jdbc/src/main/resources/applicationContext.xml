@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        https://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd
+">
+        <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+            <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+            <property name="url" value="jdbc:mysql://localhost:3306/jdbc?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;allowPublicKeyRetrieval=true"/>
+            <property name="username" value="root"></property>
+            <property name="password" value="xiaxinyv6"></property>
+        </bean>
+
+<!--        JdbcTemplate提供了数据CRUD的API-->
+        <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+            <property name="dataSource" ref="dataSource"></property>
+        </bean>
+
+        <bean id="employeeDao" class="com.xiaxinyu.spring.jdbc.dao.EmployeeDao">
+            <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+        </bean>
+
+<!--    logback日志组件，Spring框架默认集成-->
+<!--        <bean id="employeeService" class="com.xiaxinyu.spring.jdbc.service.EmployeeService">-->
+<!--            <property name="employeeDao" ref="employeeDao"></property>-->
+<!--            <property name="transactionManager" ref="transactionManager"></property>-->
+<!--        </bean>-->
+<!--        事务管理器,用于创建事务/提交/回滚-->
+        <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+            <property name="dataSource" ref="dataSource"></property>
+        </bean>
+
+        <bean id="batchService" class="com.xiaxinyu.spring.jdbc.service.BatchService">
+            <property name="employeeDao" ref="employeeDao"></property>
+        </bean>
+
+        <bean id="employeeService" class="com.xiaxinyu.spring.jdbc.service.EmployeeService">
+            <property name="employeeDao" ref="employeeDao"></property>
+            <property name="batchService" ref="batchService"></property>
+        </bean>
+
+
+    
+<!--        事务通知配置，决定哪些方法使用事务，哪些方法不使用事务-->
+        <tx:advice id="txAdvice" transaction-manager="transactionManager">
+            <tx:attributes>
+<!--                目标方法名为batchImport时，启用声明式事务，成功提交，运行异常时回滚-->
+                <tx:method name="*" propagation="REQUIRED"/>
+            </tx:attributes>
+        </tx:advice>
+
+<!--        定义声明式事务的作用范围-->
+        <aop:config>
+            <aop:pointcut id="pointcut" expression="execution(public * com.xiaxinyu..*.*(..))"/>
+            <aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut"></aop:advisor>
+        </aop:config>
+
+<!--        启用注解形式声明式事务-->
+<!--        <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>-->
+</beans>
