@@ -2,12 +2,11 @@
     <div class="card">
         <div class="card-body">
             <div class="row">
-                <div class="col-3">
-                    <img class="img-fluid" src="https://cdn.acwing.com/media/user/profile/photo/66949_lg_82da720451.jpg"
-                        alt="">
+                <div class="col-3 img-field">
+                    <img class="img-fluid" :src="user.photo" alt="">
                 </div>
                 <div class="col-9">
-                    <div class="username">{{ fullName }}</div>
+                    <div class="username">{{ user.username }}</div>
                     <div class="fans">粉丝 ： {{ user.followerCount }}</div>
                     <button @click="follow" v-if="!user.is_followed" type="button" class="btn btn-secondary btn-sm">+关注
                     </button>
@@ -21,7 +20,8 @@
 </template>
 
 <script>
-import { computed } from 'vue';
+import $ from 'jquery';
+import { useStore } from 'vuex';
 
 export default {
     name: "UserProfileInfo",
@@ -32,18 +32,42 @@ export default {
         },
     },
     setup(props, context) {
-        let fullName = computed(() => props.user.lastName + ' ' + props.user.firstName);
-
+        const store = useStore();
         const follow = () => {
-            context.emit('follow');
+            $.ajax({
+                url: "https://app165.acapp.acwing.com.cn/myspace/follow/",
+                type: "post",
+                data: {
+                    target_id: props.user.id,
+                },
+                headers: {
+                    'Authorication': "Bearer " + store.state.user.access,
+                },
+                success(resp) {
+                    if (resp.result === "success")
+                        context.emit("follow");
+                }
+            });
         }
 
         const unfollow = () => {
-            context.emit('unfollow');
+            $.ajax({
+                url: "https://app165.acapp.acwing.com.cn/myspace/follow/",
+                type: "post",
+                data: {
+                    target_id: props.user.id,
+                },
+                headers: {
+                    'Authorization': "Bearer " + store.state.user.access,
+                },
+                success(resp) {
+                    if (resp.result === "success")
+                        context.emit("unfollow");
+                }
+            });
         }
 
         return {
-            fullName,
             follow,
             unfollow
         }
@@ -68,5 +92,11 @@ img {
 button {
     padding: 2px 4px;
     font-size: 12px;
+}
+
+.img-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 </style>

@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue';
+import HomeView from '../views/HomeView';
 import UserListView from '../views/UserList';
 import UserProfileView from '../views/UserProfile';
 import LoginView from '../views/LoginView';
@@ -13,29 +13,33 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/userlist',
+    path: '/userlist/',
     name: 'userlist',
     component: UserListView
   },
   {
-    path: '/userprofile',
+    path: '/userprofile/:userId/',
     name: 'userprofile',
     component: UserProfileView
   },
   {
-    path: '/login',
+    path: '/login/',
     name: 'login',
     component: LoginView
   },
   {
-    path: '/register',
+    path: '/register/',
     name: 'register',
     component: RegisterView
   },
   {
-    path: '/404',
+    path: '/404/',
     name: '404',
     component: NotFoundView
+  },
+  {
+    path: '/:catchAll(.*)',
+    redirect: '/404/'
   }
 ]
 

@@ -3,10 +3,10 @@
         <div class="row">
             <div class="col-3">
                 <UserProfileInfo @follow="follow" @unfollow="unfollow" :user="user"></UserProfileInfo>
-                <UserProfileWrite @post_a_post="post_a_post"></UserProfileWrite>
+                <UserProfileWrite v-if="is_me" @post_a_post="post_a_post"></UserProfileWrite>
             </div>
             <di class="col-9">
-                <UserProfilePosts :posts="posts"></UserProfilePosts>
+                <UserProfilePosts :user="user" :posts="posts" @delete_a_post="delete_a_post"></UserProfilePosts>
             </di>
         </div>
     </ContentBase>
@@ -17,8 +17,12 @@
 import ContentBase from '../components/ContentBase';
 import UserProfileInfo from '../components/UserProfileInfo';
 import UserProfilePosts from '../components/UserProfilePosts';
-import UserProfileWrite from '../components/UserProfileWrite'
-import { reactive } from 'vue';
+import UserProfileWrite from '../components/UserProfileWrite';
+import { reactive, computed } from 'vue';
+import { useRoute } from 'vue-router';
+import { useStore } from 'vuex';
+import $ from 'jquery';
+
 
 export default {
     name: 'UserProfile',
@@ -29,34 +33,48 @@ export default {
         UserProfileWrite
     },
     setup() {
-        const user = reactive({
-            id: 1,
-            username: "xiaxinyu",
-            lastName: "Xia",
-            firstName: "Xinyu",
-            followerCount: 999,
-            is_followed: true
-        });
+        const store = useStore();
 
-        const posts = reactive({
-            count: 3,
-            posts: [
-                {
-                    id: 1,
-                    userId: 1,
-                    content: "1111111",
-                },
-                {
-                    id: 2,
-                    userId: 1,
-                    content: "2222222",
-                },
-                {
-                    id: 3,
-                    userId: 1,
-                    content: "3333333",
-                },
-            ]
+        const route = useRoute();
+
+        const userId = parseInt(route.params.userId);
+
+        const user = reactive({});
+
+        const posts = reactive({});
+
+        $.ajax({
+            url: "https://app165.acapp.acwing.com.cn/myspace/getinfo/",
+            type: "get",
+            data: {
+                user_id: userId,
+            },
+            headers: {
+                'Authorization': "Bearer " + store.state.user.access,
+            },
+            success(resp) {
+                user.id = resp.id;
+                user.username = resp.username;
+                user.photo = resp.photo;
+                user.followerCount = resp.followerCount;
+                user.is_followed = resp.is_followed;
+            }
+        })
+
+
+        $.ajax({
+            url: "https://app165.acapp.acwing.com.cn/myspace/post/",
+            type: "get",
+            data: {
+                user_id: userId,
+            },
+            headers: {
+                'Authorization': "Bearer " + store.state.user.access,
+            },
+            success(resp) {
+                // posts.count = resp.length;
+                posts.posts = resp;
+            }
         })
 
         const follow = () => {
@@ -78,14 +96,23 @@ export default {
                 userId: 1,
                 content: content,
             })
+        };
+
+        const delete_a_post = (post_id) => {
+            posts.posts = posts.posts.filter(post => post.id !== post_id);
+            posts.count = posts.posts.length;
         }
+
+        const is_me = computed(() => userId === store.state.user.id);
 
         return {
             user,
             follow,
             unfollow,
             posts,
-            post_a_post
+            post_a_post,
+            is_me,
+            delete_a_post
         }
     },
 
