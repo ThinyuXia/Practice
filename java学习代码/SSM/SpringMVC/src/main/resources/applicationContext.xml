@@ -13,9 +13,44 @@
 
     <context:component-scan base-package="com.xiaxinyu.springmvc"></context:component-scan>
     <!--启用Spring MVC的注解开发模式-->
-    <mvc:annotation-driven>
+    <mvc:annotation-driven conversion-service="conversionService">
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <!-- response.setContentType("text/html;charset=utf-8 -->
+                        <value>text/html;charset=utf-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+
     </mvc:annotation-driven>
     <!-- 将图片/JS/CSS等静态资源排除在外,可提高执行效率 -->
     <mvc:default-servlet-handler/>
+
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+<!--                使用转换器类后 @DateTimeFormat注解会失效 -->
+                <bean class="com.xiaxinyu.springmvc.converter.MyDateConverter"/>
+            </set>
+        </property>
+    </bean>
+
+
+    <bean id="ViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+        <property name="contentType" value="text/html;charset=utf-8"/>
+        <property name="suffix" value=".ftl"/>
+    </bean>
+
+    <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath" value="/WEB-INF/ftl"/>
+        <property name="freemarkerSettings">
+            <props>
+                <prop key="defaultEncoding">utf-8</prop>
+            </props>
+        </property>
+    </bean>
 
 </beans>
