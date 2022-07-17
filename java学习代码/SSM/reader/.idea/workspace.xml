@@ -16,14 +16,16 @@
       <change beforePath="$PROJECT_DIR$/../../../college/web课程设计/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../college/web课程设计/service.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../college/web课程设计/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../college/web课程设计/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/reader_Web_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/reader_Web_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/controller/TestController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reader.iml" beforeDir="false" afterPath="$PROJECT_DIR$/reader.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/mapper/TestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/mapper/TestMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaxinyu/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaxinyu/controller/TestController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../数据库基础/jdbc/src/c3p0-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../数据库基础/jdbc/src/c3p0-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../out/production/practice/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../out/production/practice/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../out/production/practice/蓝桥杯.class" beforeDir="false" />
@@ -38,6 +40,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JUnit3 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -66,6 +69,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -77,20 +82,103 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.xiaxinyu.service" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.xiaxinyu.controller" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MybatisPlusTest.testSelect">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MybatisPlusTest.testDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="reader" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaxinyu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaxinyu" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaxinyu.MybatisPlusTest" />
+      <option name="METHOD_NAME" value="testDelete" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MybatisPlusTest.testInsert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="reader" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaxinyu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaxinyu" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaxinyu.MybatisPlusTest" />
+      <option name="METHOD_NAME" value="testInsert" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MybatisPlusTest.testSelect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="reader" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaxinyu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaxinyu" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaxinyu.MybatisPlusTest" />
+      <option name="METHOD_NAME" value="testSelect" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MybatisPlusTest.testUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="reader" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaxinyu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaxinyu" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaxinyu.MybatisPlusTest" />
+      <option name="METHOD_NAME" value="testUpdate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="reader" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaxinyu.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaxinyu.service" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaxinyu.service.TestServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -183,6 +271,23 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.TestServiceTest" />
+      <item itemvalue="Tomcat Server.Tomcat 8.5.77" />
+      <item itemvalue="JUnit.MybatisPlusTest.testInsert" />
+      <item itemvalue="JUnit.MybatisPlusTest.testUpdate" />
+      <item itemvalue="JUnit.MybatisPlusTest.testDelete" />
+      <item itemvalue="JUnit.MybatisPlusTest.testSelect" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MybatisPlusTest.testSelect" />
+        <item itemvalue="JUnit.MybatisPlusTest.testDelete" />
+        <item itemvalue="JUnit.MybatisPlusTest.testUpdate" />
+        <item itemvalue="JUnit.MybatisPlusTest.testInsert" />
+        <item itemvalue="JUnit.TestServiceTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SpringGeneralSettings">
@@ -198,7 +303,8 @@
       <workItem from="1658044379434" duration="343000" />
       <workItem from="1658044841208" duration="216000" />
       <workItem from="1658045071836" duration="2169000" />
-      <workItem from="1658047349444" duration="812000" />
+      <workItem from="1658047349444" duration="4479000" />
+      <workItem from="1658059592613" duration="3039000" />
     </task>
     <servers />
   </component>

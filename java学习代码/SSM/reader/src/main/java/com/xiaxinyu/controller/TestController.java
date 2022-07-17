@@ -10,9 +10,6 @@ import java.util.Map;
 
 @Controller
 public class TestController {
-    public TestController(){
-        System.out.println("1212312312");
-    }
 
     @GetMapping("/test/t1")
     public ModelAndView test1(){
