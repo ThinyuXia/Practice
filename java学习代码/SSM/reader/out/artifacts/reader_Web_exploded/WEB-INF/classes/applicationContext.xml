@@ -53,5 +53,11 @@
         <property name="suffix" value =".ftl"/>
     </bean>
 
+<!--    Mybatis与Spring的整合配置-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/reader?useSSL=false&amp;useUnicode=true&amp;character=utf-8&amp;serverTimezone=Asia/Shanghai&amp;allowPublicKeyRetrieval=true"/>
+
+    </bean>
 
 </beans>
