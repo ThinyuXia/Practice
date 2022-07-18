@@ -33,6 +33,17 @@
           <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.11.4" />
           <element id="library" level="project" name="Maven: org.springframework:spring-test:5.2.6.RELEASE" />
           <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.2.3" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.2.3" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus:3.3.2" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-extension:3.3.2" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-core:3.3.2" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-annotation:3.3.2" />
+          <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:3.1" />
+          <element id="library" level="project" name="Maven: com.github.penggle:kaptcha:2.3.2" />
+          <element id="library" level="project" name="Maven: com.jhlabs:filters:2.0.235-1" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.14" />
         </element>
       </element>
     </root>

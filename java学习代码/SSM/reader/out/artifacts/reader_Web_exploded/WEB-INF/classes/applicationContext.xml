@@ -64,7 +64,9 @@
     </bean>
 
 <!--    SqlSessionFactoryBean用于根据配置信息创建SqlSessionFactory，不需要手动创建-->
-    <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+<!--原生Mybatis与Spring整合
+    <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">-->
+    <bean id="sessionFactory" class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="mapperLocations" value="classpath:mappers/*.xml"/>
 <!--        Mybatis配置文件所在地址-->
@@ -82,4 +84,25 @@
     </bean>
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
+<!--    配置Kaptcha-->
+    <bean id="kaptchaProducer" class="com.google.code.kaptcha.impl.DefaultKaptcha">
+        <property name="config">
+            <bean class="com.google.code.kaptcha.util.Config">
+                <constructor-arg>
+                    <props>
+    <!--                    验证码图片不生成边框-->
+                        <prop key="kaptcha.border">no</prop>
+    <!--                    验证码图片宽度为120像素-->
+                        <prop key="kaptcha.image.width">120</prop>
+<!--                        验证码图片字体颜色为蓝色-->
+                        <prop key="kaptcha.textproducer.font.color">blue</prop>
+<!--                        每个字符最大为40像素-->
+                        <prop key="kaptcha.textproducer.font.size">40</prop>
+<!--                        验证码包含四个字符-->
+                        <prop key="kaptcha.textproducer.char.length">4</prop>
+                    </props>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
 </beans>
