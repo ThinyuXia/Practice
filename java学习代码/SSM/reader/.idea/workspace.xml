@@ -15,6 +15,26 @@
       <change beforePath="$PROJECT_DIR$/../../../college/web课程设计/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../college/web课程设计/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../college/web课程设计/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../college/web课程设计/service.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../college/web课程设计/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../college/web课程设计/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/controller/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/controller/BookController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/controller/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/service/MemberService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/service/impl/MemberServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/service/impl/MemberServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/ftl/detail.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/ftl/detail.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/ftl/index.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/ftl/index.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/ftl/login.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/ftl/login.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/service/MemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/service/impl/EvaluationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/service/impl/EvaluationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/service/impl/MemberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/service/impl/MemberServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/detail.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/detail.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/index.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/index.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/login.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/login.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaxinyu/controller/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaxinyu/controller/BookController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaxinyu/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaxinyu/controller/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaxinyu/service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaxinyu/service/MemberService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaxinyu/service/impl/MemberServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaxinyu/service/impl/MemberServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../数据库基础/jdbc/src/c3p0-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../数据库基础/jdbc/src/c3p0-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../out/production/practice/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../out/production/practice/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../out/production/practice/蓝桥杯.class" beforeDir="false" />
@@ -29,9 +49,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit3 Test Class" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -284,7 +304,7 @@
       <workItem from="1658045071836" duration="2169000" />
       <workItem from="1658047349444" duration="4479000" />
       <workItem from="1658059592613" duration="17907000" />
-      <workItem from="1658127021708" duration="4933000" />
+      <workItem from="1658127021708" duration="13647000" />
     </task>
     <servers />
   </component>

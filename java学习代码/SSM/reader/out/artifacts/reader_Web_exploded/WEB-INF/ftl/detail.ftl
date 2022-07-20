@@ -50,6 +50,67 @@
         $(function () {
             $(".stars").raty({readOnly: true});
         })
+
+        $(function(){
+            <#if memberReadState??>
+                $("*[data-read-state='${memberReadState.readState}']").addClass("highlight");
+            </#if>
+
+            <#if !loginMember??>
+                $("*[data-read-state],#btnEvaluation,*[data-evaluation-id]").click(function(){
+                    //未登陆情况下提示"需要登陆"
+                    $("#exampleModalCenter").modal("show");
+                })
+            </#if>
+
+            <#if loginMember??>
+                $("*[data-read-state]").click(function(){
+                    var readState = $(this).data("read-state");
+                    $.post("/update_read_state",{
+                        memberId:${loginMember.memberId},
+                        bookId:${book.bookId},
+                        readState: readState
+                    },function(resp){
+                       if(resp.code == "0"){
+                           $("*[data-read-state]").removeClass("highlight");
+                           $("*[data-read-state='" + readState + "']").addClass("highlight");
+                       }
+                    },"json")
+                })
+
+                $("#btnEvaluation").click(function(){
+                    $("#score").raty({}); //转换为星型组件
+                    $("#dlgEvaluation").modal("show");
+                })
+
+                $("#btnSubmit").click(function (){
+                    var score = $("#score").raty("score"); //获取评分
+                    var content = $("#content").val();
+                    if(score == 0 || $.trim(content) == ""){
+                        return;
+                    }
+                    $.post("/evaluate",{
+                        score:score,
+                        bookId: ${book.bookId},
+                        memberId: ${loginMember.memberId},
+                        content: content
+                    },function (resp){
+                        if(resp.code == "0"){
+                            window.location.reload(); //刷新当前页面
+                        }
+                    },"json")
+                })
+
+                $("*[data-evaluation-id]").click(function(){
+                    var evaluationId = $(this).data("evaluation-id");
+                    $.post("/enjoy",{evaluationId:evaluationId},function (resp){
+                        if(resp.code == "0"){
+                            $("*[data-evaluation-id='" + evaluationId + "'] span").text(resp.evaluation.enjoy);
+                        }
+                    },"json")
+                })
+            </#if>
+        })
     </script>
 </head>
 <body>
@@ -124,7 +185,7 @@
                     <span class="mr-2 small pt-1">${evaluation.member.nickname}</span>
                     <span class="stars mr-2" data-score="${evaluation.score}"></span>
 
-                    <button type="button" data-evaluation-id="${evaluation.evaluationId}"
+                    <button type="button" data-evaluation-id="${evaluation.evaluationId}" datatype=""
                             class="btn btn-success btn-sm text-white float-right" style="margin-top: -3px;">
                         <img style="width: 24px;margin-top: -5px;" class="mr-1"
                              src="https://img3.doubanio.com/f/talion/7a0756b3b6e67b59ea88653bc0cfa14f61ff219d/pics/card/ic_like_gray.svg"/>
@@ -135,11 +196,28 @@
                 <div class="row mt-2 small mb-3">
                     ${evaluation.content}
                 </div>
+
                 <hr/>
             </div>
         </#list>
 
     </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                您需要登录才可以操作哦~
+            </div>
+            <div class="modal-footer">
+                <a href="/login.html" type="button" class="btn btn-primary">去登录</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="dlgEvaluation" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -147,7 +225,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <h6>为"从 0 开始学爬虫"写短评</h6>
+                <h6>为"${book.bookName}"写短评</h6>
                 <form id="frmEvaluation">
                     <div class="input-group  mt-2 ">
                         <span id="score"></span>
