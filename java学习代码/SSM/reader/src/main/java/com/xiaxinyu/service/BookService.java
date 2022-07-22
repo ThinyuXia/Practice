@@ -19,4 +19,30 @@ public interface BookService {
      * @return 图书对象
      */
     public Book selectById(Long id);
+
+
+    /**
+     * 更新图书评分，评价数量
+     */
+    public void updateEvaluation();
+
+    /**
+     * 新增图书
+     * @param book
+     * @return
+     */
+    public Book createBook(Book book);
+
+    /**
+     * 更新图书
+     * @param book
+     * @return
+     */
+    public Book updateBook(Book book);
+
+    /**
+     * 删除图书及相关数据
+     * @param bookId
+     */
+    public void deleteBook(Long bookId);
 }

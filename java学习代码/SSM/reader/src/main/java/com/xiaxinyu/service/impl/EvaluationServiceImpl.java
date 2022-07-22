@@ -1,6 +1,8 @@
 package com.xiaxinyu.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xiaxinyu.entity.Book;
 import com.xiaxinyu.entity.Evaluation;
 import com.xiaxinyu.entity.Member;
@@ -45,5 +47,27 @@ public class EvaluationServiceImpl implements EvaluationService {
         return evaluationList;
     }
 
+    @Override
+    public IPage<Evaluation> paging(String state, String order, Integer page, Integer rows) {
+        Page<Evaluation> p = new Page<>(page,rows);
+        QueryWrapper<Evaluation> queryWrapper = new QueryWrapper<>();
+        if(order != null){
+            if(order.equals("create_time")) queryWrapper.orderByDesc("create_time");
+        }
+        if(state != null){
+            if(state.equals("enable")) queryWrapper.eq("state","enable");
+            else queryWrapper.eq("state","disable");
+        }
+        IPage<Evaluation> pageObject = evaluationMapper.selectPage(p,queryWrapper);
+        return pageObject;
+    }
 
+    @Override
+    public Evaluation disableEvaluation(Long evaluationId, String reason) {
+        Evaluation evaluation = evaluationMapper.selectById(evaluationId);
+        evaluation.setState("disable");
+        evaluation.setDisableReason(reason);
+        evaluationMapper.updateById(evaluation);
+        return evaluation;
+    }
 }

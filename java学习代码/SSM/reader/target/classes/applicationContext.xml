@@ -105,4 +105,11 @@
             </bean>
         </property>
     </bean>
+
+<!--    开发Spring-Task定时任务的注解模式-->
+    <task:annotation-driven/>
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8"></property>
+    </bean>
+
 </beans>

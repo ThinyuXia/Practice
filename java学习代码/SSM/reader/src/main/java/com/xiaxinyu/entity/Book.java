@@ -13,8 +13,17 @@ public class Book {
     private String author;
     private String cover;
     private String description;
+    private Long categoryId;
     private Float evaluationScore;
     private Integer evaluationQuantity;
+
+    public Long getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
+    }
 
     public Long getBookId() {
         return bookId;
