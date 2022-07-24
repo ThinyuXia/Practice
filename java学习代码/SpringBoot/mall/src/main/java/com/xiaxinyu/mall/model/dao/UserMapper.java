@@ -1,6 +1,7 @@
 package com.xiaxinyu.mall.model.dao;
 
 import com.xiaxinyu.mall.model.pojo.User;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
@@ -14,4 +15,8 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+    User selectByName(String userName);
+
+    User selectLogin(@Param("userName") String userName,@Param("password") String password);
 }
