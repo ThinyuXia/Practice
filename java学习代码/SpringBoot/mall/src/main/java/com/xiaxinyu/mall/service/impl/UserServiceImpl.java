@@ -59,7 +59,7 @@ public class UserServiceImpl implements UserService{
     @Override
     public void updateInfo(User user) throws ExceptionUnify {
         int count = userMapper.updateByPrimaryKeySelective(user);
-        if(count > 1){
+        if(count != 1){
             throw new ExceptionUnify(ExceptionEnum.UPDATE_FAILED);
         }
     }

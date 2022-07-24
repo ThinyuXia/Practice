@@ -3,7 +3,7 @@ package com.xiaxinyu.mall.exception;
 /**
  * 统一异常
  */
-public class ExceptionUnify extends  Exception{
+public class ExceptionUnify extends  RuntimeException{
     private final Integer code;
     private final String msg;
 

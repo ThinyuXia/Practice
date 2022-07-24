@@ -1,6 +1,7 @@
 package com.xiaxinyu.mall.common;
 
 import com.xiaxinyu.mall.exception.ExceptionEnum;
+import redis.clients.jedis.Jedis;
 
 /**
  * 通用返回对象
@@ -87,4 +88,5 @@ public class ApiRestResponse<T> {
                 ", data=" + data +
                 '}';
     }
+
 }
