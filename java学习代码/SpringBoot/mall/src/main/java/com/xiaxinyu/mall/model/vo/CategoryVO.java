@@ -1,4 +1,4 @@
-package com.xiaxinyu.mall.vo;
+package com.xiaxinyu.mall.model.vo;
 
 import java.io.Serializable;
 import java.util.ArrayList;

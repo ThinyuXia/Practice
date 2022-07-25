@@ -8,7 +8,7 @@ import com.xiaxinyu.mall.model.dao.CategoryMapper;
 import com.xiaxinyu.mall.model.pojo.Category;
 import com.xiaxinyu.mall.model.request.AddCategoryReq;
 import com.xiaxinyu.mall.service.CategoryService;
-import com.xiaxinyu.mall.vo.CategoryVO;
+import com.xiaxinyu.mall.model.vo.CategoryVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -75,9 +75,9 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     @Cacheable(value = "listForCustomer")
-    public List<CategoryVO> listForCustomer(){
+    public List<CategoryVO> listForCustomer(Integer parentId){
         List<CategoryVO> categoryVOList = new ArrayList<>();
-        recursivelyFindCategories(categoryVOList,0);
+        recursivelyFindCategories(categoryVOList,parentId);
         return categoryVOList;
     }
 

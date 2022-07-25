@@ -3,7 +3,7 @@ package com.xiaxinyu.mall.service;
 import com.github.pagehelper.PageInfo;
 import com.xiaxinyu.mall.model.pojo.Category;
 import com.xiaxinyu.mall.model.request.AddCategoryReq;
-import com.xiaxinyu.mall.vo.CategoryVO;
+import com.xiaxinyu.mall.model.vo.CategoryVO;
 
 import java.util.List;
 
@@ -19,5 +19,5 @@ public interface CategoryService {
 
     PageInfo listForAdmin(Integer pageNum, Integer pageSize);
 
-    List<CategoryVO> listForCustomer();
+    List<CategoryVO> listForCustomer(Integer parentId);
 }

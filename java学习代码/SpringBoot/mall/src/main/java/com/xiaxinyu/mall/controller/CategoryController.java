@@ -10,15 +10,11 @@ import com.xiaxinyu.mall.model.request.AddCategoryReq;
 import com.xiaxinyu.mall.model.request.UpdateCategoryReq;
 import com.xiaxinyu.mall.service.CategoryService;
 import com.xiaxinyu.mall.service.UserService;
-import com.xiaxinyu.mall.vo.CategoryVO;
+import com.xiaxinyu.mall.model.vo.CategoryVO;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import springfox.documentation.annotations.Cacheable;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -100,10 +96,11 @@ public class CategoryController {
     }
 
     @ApiOperation("前台分类列表")
-    @PostMapping("/category/list")
+    @GetMapping("/category/list")
     @ResponseBody
     public ApiRestResponse listCategory(){
-        List<CategoryVO> categoryVOS = categoryService.listForCustomer();
+
+        List<CategoryVO> categoryVOS = categoryService.listForCustomer(0);
         return ApiRestResponse.success(categoryVOS);
     }
 

@@ -114,4 +114,17 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectCartByUserIdAndProductId" parameterType="map" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"/> from mall_cart where user_id = #{userId}
+    and product_id = #{productId}
+  </select>
+  <select id="selectList" parameterType="map" resultType="com.xiaxinyu.mall.model.vo.CartVO">
+    select c.id as id,p.id as productId,c.user_id as userId,c.quantity as quantity,c.selected as selected,p.price as price,p.name as productName,
+           p.image as productImage
+    from mall_cart c left join mall_product p on p.id = c.product_id where user_id = #{userId} and p.status = 1
+  </select>
+
+  <select id="selectOrNot" parameterType="map" resultMap="BaseResultMap">
+    update mall_cart set selected = #{selected} where user_id = #{userId} <if test="productId != null"> and product_id = #{productId} </if>
+  </select>
 </mapper>
