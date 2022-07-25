@@ -10,9 +10,10 @@ import com.xiaxinyu.mall.model.request.AddCategoryReq;
 import com.xiaxinyu.mall.service.CategoryService;
 import com.xiaxinyu.mall.vo.CategoryVO;
 import org.springframework.beans.BeanUtils;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
-import springfox.documentation.annotations.Cacheable;
+
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
