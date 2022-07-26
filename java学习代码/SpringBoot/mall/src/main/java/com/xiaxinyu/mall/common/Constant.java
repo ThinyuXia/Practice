@@ -1,6 +1,8 @@
 package com.xiaxinyu.mall.common;
 
 import com.google.common.collect.Sets;
+import com.xiaxinyu.mall.exception.ExceptionEnum;
+import com.xiaxinyu.mall.exception.ExceptionUnify;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -33,5 +35,47 @@ public class Constant {
     public interface Cart{
         int UN_CHECKED = 0; //购物车未选中商品
         int CHECKED = 1; //购物车选中商品
+    }
+
+    public enum OrderStatusEnum{
+        CANCELED(0,"用户已取消"),
+        NOT_PAY(10,"未付款"),
+        PAID(20,"已付款"),
+        DELIVERED(30,"已发货"),
+        FINISHED(40,"交易完成"),
+        ;
+
+
+        private int code;
+        private String name;
+
+        OrderStatusEnum(int code, String name) {
+            this.code = code;
+            this.name = name;
+        }
+
+        public static  OrderStatusEnum codeOf(int code){
+            for(OrderStatusEnum orderStatusEnum : values()){ //遍历所有枚举
+                if(orderStatusEnum.getCode() == code)
+                    return orderStatusEnum;
+            }
+            throw new ExceptionUnify(ExceptionEnum.NO_ENUM);
+        }
+
+        public int getCode() {
+            return code;
+        }
+
+        public void setCode(int code) {
+            this.code = code;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
     }
 }

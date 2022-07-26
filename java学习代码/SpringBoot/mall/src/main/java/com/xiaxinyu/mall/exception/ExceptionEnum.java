@@ -23,6 +23,11 @@ public enum ExceptionEnum {
     PRODUCT_NOT_EXISTS(10016,"商品不存在"),
     NOT_SALE(10016,"商品状态不可售"),
     NOT_ENOUGH(10017,"商品库存不足"),
+    CART_EMPTY(10018,"购物车中已勾选商品为空"),
+    NO_ENUM(10019,"未找到对应的枚举类"),
+    NO_ORDER(10020,"订单不存在"),
+    NO_YOUR_ORDER(10021,"订单不属于你"),
+    WRONG_ORDER_STATUS(10022,"订单状态不符"),
 
     SYSTEM_ERROR(20000,"系统异常");
 
