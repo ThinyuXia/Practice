@@ -1,4 +1,4 @@
-##### 这个repo用来存放平时练习的代码，和上课的一些笔记
+> #### 这个repo主要用来存放平时练习的代码以及笔记
 
 
 ![](https://img.shields.io/badge/language-Java-yellow.svg)
