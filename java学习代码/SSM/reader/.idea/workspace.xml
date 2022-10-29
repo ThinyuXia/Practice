@@ -10,101 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="772ac246-af17-452a-8e69-2f7fc092b8de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/controller/management/MBookController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/controller/management/MEvaluationController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/controller/management/ManagementController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/controller/management/UserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/entity/management/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/mapper/UserMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/service/UserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/task/ComputeTask.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/mappers/user.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/ftl/management/book.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/ftl/management/evaluation.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/ftl/management/index.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/ftl/management/login.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/lib/commons-fileupload-1.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/lib/commons-io-2.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/lib/jsoup-1.13.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/upload/20220722125934691.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/upload/20220722125955393.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/upload/20220722130123651.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/upload/20220722130257462.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/upload/20220722130306519.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/upload/20220722130407784.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/upload/20220722130436013.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/upload/20220722130637577.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/upload/20220722130738976.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/upload/20220722131009672.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/upload/20220722131336108.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/upload/20220722133215238.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/upload/20220722133440362.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/upload/20220722133513794.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/upload/20220722133658176.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/controller/management/MBookController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/controller/management/MEvaluationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/controller/management/ManagementController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/controller/management/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/entity/management/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/task/ComputeTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/user.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/management/book.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/management/evaluation.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/management/index.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/management/login.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/test.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaxinyu/controller/management/MBookController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaxinyu/controller/management/MEvaluationController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaxinyu/controller/management/ManagementController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaxinyu/controller/management/UserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaxinyu/entity/management/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaxinyu/mapper/UserMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaxinyu/service/UserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaxinyu/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaxinyu/task/ComputeTask.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mappers/user.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../college/web课程设计/activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../college/web课程设计/activity.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../college/web课程设计/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../college/web课程设计/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../college/web课程设计/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../college/web课程设计/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../college/web课程设计/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../college/web课程设计/service.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../college/web课程设计/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../college/web课程设计/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/reader_Web_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/reader_Web_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/entity/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/entity/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/entity/Evaluation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/entity/Evaluation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/mapper/BookMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/mapper/BookMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/service/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/service/BookService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/service/EvaluationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/service/EvaluationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/service/impl/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/service/impl/BookServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/service/impl/EvaluationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/com/xiaxinyu/service/impl/EvaluationServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/mappers/book.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/classes/mappers/book.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/ftl/test.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/WEB-INF/ftl/test.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/resources/wangEditor.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/reader_Web_exploded/resources/wangEditor.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/entity/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/entity/Evaluation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/entity/Evaluation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/mapper/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/mapper/BookMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/service/EvaluationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/service/EvaluationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/service/impl/BookServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/service/impl/EvaluationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaxinyu/service/impl/EvaluationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/book.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/book.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/wangEditor.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/wangEditor.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaxinyu/entity/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaxinyu/entity/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaxinyu/entity/Evaluation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaxinyu/entity/Evaluation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaxinyu/mapper/BookMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaxinyu/mapper/BookMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaxinyu/service/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaxinyu/service/BookService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaxinyu/service/EvaluationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaxinyu/service/EvaluationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaxinyu/service/impl/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaxinyu/service/impl/BookServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaxinyu/service/impl/EvaluationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaxinyu/service/impl/EvaluationServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/book.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/book.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../数据库基础/jdbc/src/c3p0-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../数据库基础/jdbc/src/c3p0-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../out/production/practice/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../out/production/practice/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../out/production/practice/蓝桥杯.class" beforeDir="false" />
@@ -374,7 +284,7 @@
       <workItem from="1658045071836" duration="2169000" />
       <workItem from="1658047349444" duration="4479000" />
       <workItem from="1658059592613" duration="17907000" />
-      <workItem from="1658127021708" duration="31739000" />
+      <workItem from="1658127021708" duration="31991000" />
     </task>
     <servers />
   </component>

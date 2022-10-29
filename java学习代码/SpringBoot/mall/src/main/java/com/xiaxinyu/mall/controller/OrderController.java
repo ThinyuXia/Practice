@@ -44,7 +44,7 @@ public class OrderController {
         return ApiRestResponse.success();
     }
 
-    @PostMapping("/order/qrcode")
+    @GetMapping("/order/qrcode")
     public ApiRestResponse qrcode(String orderNo){
         String pngAddress = orderService.qrcode(orderNo);
         return ApiRestResponse.success(pngAddress);

@@ -88,7 +88,7 @@ public class CategoryController {
     }
 
     @ApiOperation("后台分类列表")
-    @PostMapping("/admin/category/list")
+    @GetMapping("/admin/category/list")
     @ResponseBody
     public ApiRestResponse listCategoryForAdmin(@RequestParam Integer pageNum,@RequestParam Integer pageSize){
         PageInfo pageInfo = categoryService.listForAdmin(pageNum,pageSize);

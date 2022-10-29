@@ -96,6 +96,18 @@ ADD 字段1 类型 约束 COMMENT 注释,
 ADD 字段2 类型 约束 COMMENT 注释;
 ```
 
+##### 给表中字段添加约束
+
+```sql
+ALTER TABLE 表名 ADD 约束 字段名;
+```
+
+##### 修改表中字段顺序
+
+```sql
+ALTER TABLE	表名 CHANGE 字段名1 
+```
+
 ##### 修改表中字段类型和约束
 
 ```sql
@@ -119,6 +131,14 @@ ALTER TABLE 表名
 DROP 字段1,
 DROP 字段2;
 ```
+
+##### 删除表的外键约束
+
+```sql
+AlTER TABLE 表名 DROP FOREIGN KEY 外键名
+```
+
+
 
 ##### 查看表中设置的索引
 
@@ -356,6 +376,8 @@ COT()
 LOWER() #字符串转小写
 UPPER() #字符串转大写
 LENGTH() #字符串长度
+LEFT(s，n) #从左到右截取n个字符
+RIGHT(s,n) #从右到左截取n个字符
 CONCAT(s1,s2) #拼接字符串，可接受多个参数
 INSTR(s1,s2) #s2字符串在s1字符串出现位置,不存在时返回0,没有差一原则
 INSERT(s1,index,0,s2) #插入字符串
@@ -385,6 +407,9 @@ CASE
  WHEN 条件2 THEN 值2
  ELSE 值N
 END
+
+#分组函数
+GROUP_CONCAT() #根据GROUP BY得到的数据进行拼接，用逗号
 ```
 
 

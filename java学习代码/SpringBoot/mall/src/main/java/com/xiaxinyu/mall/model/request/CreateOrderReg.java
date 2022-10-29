@@ -59,4 +59,14 @@ public class CreateOrderReg {
         this.paymentType = paymentType;
     }
 
+    @Override
+    public String toString() {
+        return "CreateOrderReg{" +
+                "receiverName='" + receiverName + '\'' +
+                ", receiverMobile='" + receiverMobile + '\'' +
+                ", receiverAddress='" + receiverAddress + '\'' +
+                ", postage=" + postage +
+                ", paymentType=" + paymentType +
+                '}';
+    }
 }
