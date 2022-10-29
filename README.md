@@ -3,7 +3,6 @@
 
 ![](https://img.shields.io/badge/language-Java-yellow.svg)
 ![notes (shields.io)](https://img.shields.io/badge/-notes-blue)
-[![](https://img.shields.io/badge/blog-@zimei-red.svg)](https://blog.csdn.net/m0_51242575?type=bbs)
 
 
 ```text
