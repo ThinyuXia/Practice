@@ -1,5 +1,5 @@
 /**
- * @Description: 简单工厂模式的Java实现——实现了一个简单运算工厂类
+ * @Description: 简单工厂模式的Java实现——实现了一个简单运算工厂类,可根据不同的运算操作符，返回不同的实例化对象
  * @author: xiaxinyu
  * @Email: xiaxinyuxy@163.com
  * @date: 2022年11月03日 15:21
