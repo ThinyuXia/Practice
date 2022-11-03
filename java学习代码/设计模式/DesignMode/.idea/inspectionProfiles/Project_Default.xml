@@ -2,7 +2,7 @@
   <profile version="1.0">
     <option name="myName" value="Project Default" />
     <inspection_tool class="JavadocDeclaration" enabled="true" level="WARNING" enabled_by_default="true">
-      <option name="ADDITIONAL_TAGS" value="Email:,date:,Copyright:,version:,author:,Description:" />
+      <option name="ADDITIONAL_TAGS" value="Email:,date:,Copyright:,version:,author:,Description:,Description:策略模式的Java实现()——" />
     </inspection_tool>
   </profile>
 </component>
