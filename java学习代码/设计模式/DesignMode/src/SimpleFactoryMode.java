@@ -7,7 +7,7 @@
  * @version: 1.0.0
  */
 
-public class SimpleFactory {
+public class SimpleFactoryMode {
     public static Operation createOperation(String operate){
         Operation operation = null;
         switch (operate){
