@@ -52,7 +52,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ProxyMode">
+  <component name="RunManager" selected="Application.FactoryMode">
     <configuration name="DecoratorMode (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DecoratorMode" />
       <module name="DesignMode" />
@@ -74,8 +74,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DecoratorMode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DecoratorMode" />
+    <configuration name="FactoryMode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FactoryMode" />
       <module name="DesignMode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -90,11 +90,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FactoryMode" />
         <item itemvalue="Application.ProxyMode" />
         <item itemvalue="Application.DecoratorMode (3)" />
         <item itemvalue="Application.DecoratorMode (2)" />
         <item itemvalue="Application.DecoratorMode (1)" />
-        <item itemvalue="Application.DecoratorMode" />
       </list>
     </recent_temporary>
   </component>
@@ -110,7 +110,9 @@
       <workItem from="1667462381391" duration="3814000" />
       <workItem from="1667547669452" duration="1927000" />
       <workItem from="1667552261914" duration="2215000" />
-      <workItem from="1667639305530" duration="3762000" />
+      <workItem from="1667639305530" duration="4082000" />
+      <workItem from="1667736526421" duration="294000" />
+      <workItem from="1667807842113" duration="1104000" />
     </task>
     <servers />
   </component>
