@@ -52,37 +52,37 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.FactoryMode">
-    <configuration name="DecoratorMode (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DecoratorMode" />
+  <component name="RunManager" selected="Application.PrototypeMode">
+    <configuration name="PrototypeMode (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PrototypeMode" />
       <module name="DesignMode" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DecoratorMode (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DecoratorMode" />
+    <configuration name="PrototypeMode (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PrototypeMode" />
       <module name="DesignMode" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DecoratorMode (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DecoratorMode" />
+    <configuration name="PrototypeMode (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PrototypeMode" />
       <module name="DesignMode" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FactoryMode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FactoryMode" />
+    <configuration name="PrototypeMode (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PrototypeMode" />
       <module name="DesignMode" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProxyMode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ProxyMode" />
+    <configuration name="PrototypeMode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PrototypeMode" />
       <module name="DesignMode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -90,11 +90,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FactoryMode" />
-        <item itemvalue="Application.ProxyMode" />
-        <item itemvalue="Application.DecoratorMode (3)" />
-        <item itemvalue="Application.DecoratorMode (2)" />
-        <item itemvalue="Application.DecoratorMode (1)" />
+        <item itemvalue="Application.PrototypeMode" />
+        <item itemvalue="Application.PrototypeMode (5)" />
+        <item itemvalue="Application.PrototypeMode (4)" />
+        <item itemvalue="Application.PrototypeMode (3)" />
+        <item itemvalue="Application.PrototypeMode (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -112,7 +112,7 @@
       <workItem from="1667552261914" duration="2215000" />
       <workItem from="1667639305530" duration="4082000" />
       <workItem from="1667736526421" duration="294000" />
-      <workItem from="1667807842113" duration="1104000" />
+      <workItem from="1667807842113" duration="2754000" />
     </task>
     <servers />
   </component>
