@@ -1,5 +1,5 @@
 /**
- * @Description: 工厂模式的Java实现
+ * @Description: 工厂模式(定义一个用于创建对象的工厂接口，让子类决定实例化哪一个类，工厂模式使一个类的实例化延迟到子类)的Java实现
  * @author: xiaxinyu
  * @Email: xiaxinyuxy@163.com
  * @date: 2022年11月08日 11:48
