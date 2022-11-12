@@ -22,14 +22,14 @@ interface Product{
     public void showInfo();
 }
 
-class ConcreteProduct1 implements Product{
+class ConcreteProduct1 implements Product {
     @Override
     public void showInfo() {
         System.out.println("产品1信息");
     }
 }
 
-class ConcreteProduct2 implements Product{
+class ConcreteProduct2 implements Product {
     @Override
     public void showInfo() {
         System.out.println("产品2信息");

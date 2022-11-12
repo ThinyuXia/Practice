@@ -5,23 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f56fddc-4d43-4a19-b5ff-c21637d19314" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../concurrent/concurrent.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../concurrent/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../concurrent/src/main/resources/logback.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../concurrent/target/classes/com/xiaxinyu/concurrent/Test1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../concurrent/target/classes/com/xiaxinyu/concurrent/Test1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../concurrent/target/classes/com/xiaxinyu/concurrent/Test2$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../concurrent/target/classes/com/xiaxinyu/concurrent/Test2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../concurrent/target/classes/com/xiaxinyu/concurrent/Test3$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../concurrent/target/classes/com/xiaxinyu/concurrent/Test3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../concurrent/target/classes/com/xiaxinyu/concurrent/Test4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../concurrent/target/classes/com/xiaxinyu/concurrent/Test5$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../concurrent/target/classes/com/xiaxinyu/concurrent/Test5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../concurrent/target/classes/com/xiaxinyu/concurrent/Test6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../concurrent/target/classes/com/xiaxinyu/concurrent/Test7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../concurrent/target/classes/com/xiaxinyu/concurrent/Test8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../concurrent/target/classes/com/xiaxinyu/concurrent/TwoPhaseTermination.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../concurrent/target/classes/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FactoryMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FactoryMode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +57,14 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.BuilderMode">
+    <configuration name="BuilderMode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BuilderMode" />
+      <module name="DesignMode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FacadeMode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FacadeMode" />
       <module name="DesignMode" />
@@ -82,13 +74,6 @@
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="DesignMode" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PrototypeMode (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PrototypeMode" />
       <module name="DesignMode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -110,11 +95,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BuilderMode" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.FacadeMode" />
         <item itemvalue="Application.TemplateMethodMode" />
         <item itemvalue="Application.PrototypeMode" />
-        <item itemvalue="Application.PrototypeMode (5)" />
       </list>
     </recent_temporary>
   </component>
@@ -136,6 +121,7 @@
       <workItem from="1668151816727" duration="5792000" />
       <workItem from="1668160423459" duration="56000" />
       <workItem from="1668166165408" duration="784000" />
+      <workItem from="1668249111199" duration="3443000" />
     </task>
     <servers />
   </component>
