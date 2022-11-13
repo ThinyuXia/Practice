@@ -3,6 +3,7 @@ package com.xiaxinyu.stream;
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -28,10 +29,189 @@ public class StreamDemo {
 //        test09();
 //        test10();
 //        test11();
+//        test12();
+//        test13();
+//        test14();
+//        test15();
+//        test16();
+//        test17();
+//        test18();
+//        test19();
+//        test20();
+//        test21();
+//        test22();
+//        test23();
+//        test24();
+//        test25();
+//        test26();
+        Stream<Author> stream = getAuthors().stream();
+        stream.map(author -> author.getName())
+                .forEach(name -> System.out.println(name));
 
     }
 
+    //reduce4
+    private static void test26() {
+        //使用reduce求所有作者中年龄的最小值
+        List<Author> authors = getAuthors();
+        Optional<Integer> min = authors.stream()
+                .map(author -> author.getAge())
+                .reduce((a, b) -> Math.min(a, b));
+        min.ifPresent(minAge -> System.out.println(minAge));
+    }
 
+    //reduce3
+    private static void test25() {
+        //使用reduce求所有作者中年龄的最小值
+        List<Author> authors = getAuthors();
+        Integer min = authors.stream()
+                .map(author -> author.getAge())
+                .reduce(Integer.MAX_VALUE, (a, b) -> Math.min(a, b));
+        System.out.println(min);
+    }
+
+    //reduce2
+    private static void test24() {
+        //使用reduce求所有作者中年龄的最大值
+        List<Author> authors = getAuthors();
+        Integer max = authors.stream()
+                .map(author -> author.getAge())
+                .reduce(0, (a, b) -> Math.max(a, b));
+        System.out.println(max);
+    }
+
+    //reduce1
+    private static void test23() {
+        //使用reduce求所有作者年龄的和
+        List<Author> authors = getAuthors();
+        Integer sum = authors.stream()
+                .map(author -> author.getAge())
+                .reduce(0,(a,b) -> a + b);
+        System.out.println(sum);
+    }
+
+    //findFirst
+    private static void test22() {
+        //获取一个年龄最小的作家，并输出他的姓名
+        List<Author> authors = getAuthors();
+        Optional<Author> first = authors.stream()
+                .sorted((author1, author2) -> author1.getAge() - author2.getAge())
+                .findFirst();
+        first.ifPresent(author -> System.out.println(author.getName()));
+    }
+
+    //findAny
+    private static void test21() {
+        //获取任意一个年龄大于18的作家，如果存在就输出他的名字
+        List<Author> authors = getAuthors();
+        Optional<Author> any = authors.stream()
+                .filter(author -> author.getAge() > 18)
+                .findAny();
+        any.ifPresent(author -> System.out.println(author.getAge()));
+    }
+
+    //noMatch
+    private static void test20() {
+        //判断作家是否都没有超过100岁的
+        List<Author> authors = getAuthors();
+        boolean res = authors.stream()
+                .noneMatch(author -> author.getAge() > 100);
+
+        System.out.println(res);
+    }
+
+
+    //allMatch
+    private static void test19() {
+        //判断是否所有的作家都是成年人
+        List<Author> authors = getAuthors();
+        boolean res = authors.stream()
+                .allMatch(author -> author.getAge() > 18);
+        System.out.println(res);
+    }
+
+    //anyMatch
+    private static void test18() {
+        //判断是否有年龄在29以上的作家
+        List<Author> authors = getAuthors();
+        boolean res = authors.stream()
+                .anyMatch(author -> author.getAge() > 29);
+        System.out.println(res);
+    }
+
+    //stream->map
+    private static void test17() {
+        //获取一个Map集合，map的key为作者名，value为List<Book>
+        List<Author> authors = getAuthors();
+        Map<String, List<Book>> map = authors.stream()
+                .distinct()
+                .collect(Collectors.toMap(
+                        author -> author.getName(),
+                        author -> author.getBooks()
+                ));
+        System.out.println(map);
+    }
+
+    //stream->set
+    private static void test16() {
+        //获取一个所有书名的Set集合。
+        List<Author> authors = getAuthors();
+        Set<Book> books = authors.stream()
+                .flatMap(author -> author.getBooks().stream())
+                .collect(Collectors.toSet());
+        System.out.println(books);
+    }
+
+
+    //stream->list
+    private static void test15() {
+        //获取一个存放所有作者名字的List集合
+        List<Author> authors = getAuthors();
+        List<String> nameList = authors.stream()
+                .map(author -> author.getName())
+                .collect(Collectors.toList());
+
+        System.out.println(nameList);
+    }
+
+    //max && min
+    private static void test14() {
+        //分别获取这些作家的所出书籍的最高分和最低分并打印
+        List<Author> authors = getAuthors();
+        Optional<Integer> max = authors.stream()
+                .flatMap(author -> author.getBooks().stream())
+                .map(book -> book.getScore())
+                .max((score1, score2) -> score1 - score2);
+        System.out.println(max.get());
+
+        Optional<Integer> min = authors.stream()
+                .flatMap(author -> author.getBooks().stream())
+                .map(book -> book.getScore())
+                .min((score1, score2) -> score1 - score2);
+        System.out.println(min.get());
+    }
+
+    //count
+    private static void test13() {
+        //打印这些作家的所出书籍的数目，注意删除重复元素
+        List<Author> authors = getAuthors();
+        Long count = authors.stream()
+                .flatMap(author -> author.getBooks().stream())
+                .distinct()
+                .count();
+        System.out.println(count);
+    }
+
+
+    //forEach
+    private static void test12() {
+        //输出所有作家的名字
+        List<Author> authors = getAuthors();
+        authors.stream()
+                .map(author -> author.getName())
+                .distinct()
+                .forEach(name -> System.out.println(name));
+    }
 
     //flagMap2
     private static void test11() {
