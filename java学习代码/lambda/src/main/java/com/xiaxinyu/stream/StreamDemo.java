@@ -2,6 +2,7 @@ package com.xiaxinyu.stream;
 
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -49,7 +50,27 @@ public class StreamDemo {
 //                .forEach(name -> System.out.println(name));
 //        testAnd();
 //        testOr();
-        testNegate();
+//        testNegate();
+        List<Author> authors = getAuthors();
+
+        //1.引用对象的实例方法
+        //2.引用类的静态方法
+        //3.引用类的实例方法
+
+//        authors.stream().map(Author::getAge).forEach(age -> System.out.println(age));
+
+//        authors.stream().map(author -> author.getAge()).map(String::valueOf).forEach(age -> System.out.println(age));
+
+//        Stream<Author> authorStream = authors.stream();
+//        StringBuilder sb = new StringBuilder();
+//        authorStream.map(author -> author.getName())
+//                .forEach(sb::append);
+
+        authors.stream()
+                .map(Author::getName)
+                .map(StringBuilder::new)
+                .map(sb->sb.append("-三更").toString())
+                .forEach(System.out::println);
     }
 
     private static void testNegate() {

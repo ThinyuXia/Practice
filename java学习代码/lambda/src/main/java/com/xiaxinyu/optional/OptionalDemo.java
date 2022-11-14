@@ -33,7 +33,8 @@ public class OptionalDemo {
 //        Author author1 = (Author) Optional.ofNullable(null).orElse(new Author()); //如果Optional不存在值则抛出异常
 //        testFilter();
 //        testIsPresent();
-        testMap();
+//        testMap();
+
     }
 
     private static void testMap() {
