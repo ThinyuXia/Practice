@@ -54,7 +54,8 @@ public class LambdaDemo01 {
 //                System.out.println(value);
 //            }
 //        });
-        foreachArr(n -> System.out.println(n));
+//        foreachArr(n -> System.out.println(n));
+        printNum2(n -> n % 2 == 0,n -> n > 4);
     }
 
     public static int calculateNum(IntBinaryOperator operator){
@@ -69,6 +70,14 @@ public class LambdaDemo01 {
         return result;
     }
 
+    public static void printNum2(IntPredicate predicate,IntPredicate predicate2){
+        int[] arr = {1,2,3,4,5,6,7,8,9,10};
+        for(int n : arr){
+            if(predicate.and(predicate2).test(n)){
+                System.out.println(n);
+            }
+        }
+    }
     public static void printNum(IntPredicate predicate){
         int[] arr = {1,2,3,4,5,6,7,8,9,10};
         for(int n : arr){
